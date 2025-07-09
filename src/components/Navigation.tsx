@@ -42,7 +42,7 @@ const Navigation: React.FC = () => {
               alt="DevPaul Logo" 
               className="w-8 h-8 object-cover rounded-lg shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
             />
-            <span className="text-1xl font-bold text-gray-900 dark:text-white">DevPaul</span>
+            <span className="text-xl font-bold text-gray-900 dark:text-white">DevPaul</span>
           </motion.div>
 
           {/* Desktop Navigation */}
