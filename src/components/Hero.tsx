@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/devpaul', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/paulrealpe', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:paul@devpaul.com', label: 'Email' }
+    { icon: Mail, href: 'mailto:co.devpaul@gmail.com', label: 'Email' }
   ];
 
   const containerVariants = {

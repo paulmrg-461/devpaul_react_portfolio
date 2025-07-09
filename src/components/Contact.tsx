@@ -48,19 +48,19 @@ const Contact: React.FC = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'paul@devpaul.com',
-      link: 'mailto:paul@devpaul.com'
+      value: 'co.devpaul@gmail.com',
+      link: 'mailto:co.devpaul@gmail.com'
     },
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
+      value: '+57 301 349 5689',
+      link: 'tel:+573013495689'
     },
     {
       icon: MapPin,
       title: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Popayán, Cauca, Colombia',
       link: '#'
     }
   ];

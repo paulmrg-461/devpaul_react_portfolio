@@ -16,7 +16,7 @@ const SEO: React.FC<SEOProps> = ({
   keywords = 'Paul Realpe, DevPaul, Full-Stack Developer, UI/UX Designer, React, Node.js, JavaScript, TypeScript, Web Development, Mobile Development',
   author = 'Paul Realpe',
   image = '/og-image.jpg',
-  url = 'https://devpaul.com'
+  url = 'https://co.devpaul.com'
 }) => {
   return (
     <Helmet>
