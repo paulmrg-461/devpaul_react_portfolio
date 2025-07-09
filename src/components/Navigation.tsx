@@ -38,7 +38,7 @@ const Navigation: React.FC = () => {
             className="flex items-center space-x-2"
           >
             <img 
-              src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=100" 
+              src="/devpaul_logo.jpeg?auto=compress&cs=tinysrgb&w=100" 
               alt="DevPaul Logo" 
               className="w-10 h-10 object-cover rounded-lg shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
             />
