@@ -121,5 +121,3 @@ export const skills: Skill[] = [
   { name: 'Automatización', level: 85, category: 'design' },
   { name: 'Machine Learning', level: 75, category: 'design' }
 ];
-    title: 'Desarrollo Web',
-    description: 'Aplicaciones web personalizadas con tecnologías modernas',
