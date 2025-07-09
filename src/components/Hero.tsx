@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
           >
             <div className="relative inline-block">
               <motion.img
-                src="/WhatsApp Image 2024-10-22 at 15.34.59.jpeg"
+                src="/paul.jpeg"
                 alt="Paul Realpe"
                 className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white dark:border-gray-800 shadow-xl"
                 whileHover={{ scale: 1.1, rotate: 5 }}
