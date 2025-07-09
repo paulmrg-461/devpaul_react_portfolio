@@ -1,21 +1,23 @@
 import React, { useState } from 'react';
-import { Menu, X, Moon, Sun } from 'lucide-react';
+import { Menu, X, Moon, Sun, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../contexts/LanguageContext';
 import { useScrollSpy } from '../hooks/useScrollSpy';
 import { smoothScrollTo } from '../utils/smoothScroll';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
+  const { language, setLanguage, t } = useLanguage();
   const activeSection = useScrollSpy(['home', 'about', 'portfolio', 'services', 'contact']);
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'portfolio', label: 'Portfolio' },
-    { id: 'services', label: 'Services' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'home', label: t('nav.home') },
+    { id: 'about', label: t('nav.about') },
+    { id: 'portfolio', label: t('nav.portfolio') },
+    { id: 'services', label: t('nav.services') },
+    { id: 'contact', label: t('nav.contact') }
   ];
 
   const handleNavClick = (sectionId: string) => {
@@ -36,9 +38,9 @@ const Navigation: React.FC = () => {
             className="flex items-center space-x-2"
           >
             <img 
-              src="/WhatsApp Image 2024-09-06 at 06.24.42.jpeg" 
+              src="https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=100" 
               alt="DevPaul Logo" 
-              className="w-10 h-10 object-contain"
+              className="w-10 h-10 object-cover rounded-lg shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
             />
             <span className="text-2xl font-bold text-gray-900 dark:text-white">DevPaul</span>
           </motion.div>
@@ -70,6 +72,16 @@ const Navigation: React.FC = () => {
 
           {/* Theme Toggle & Mobile Menu */}
           <div className="flex items-center space-x-4">
+            <motion.button
+              onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 flex items-center space-x-1"
+            >
+              <Globe size={16} />
+              <span className="text-sm font-medium">{language.toUpperCase()}</span>
+            </motion.button>
+
             <motion.button
               onClick={toggleTheme}
               whileHover={{ scale: 1.1 }}

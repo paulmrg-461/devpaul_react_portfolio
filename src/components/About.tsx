@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { skills } from '../data/portfolio';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
+  
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -70,10 +73,10 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Sobre Mí
+              {t('about.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Desarrollador apasionado con más de 5 años de experiencia creando soluciones digitales innovadoras
+              {t('about.subtitle')}
             </p>
           </motion.div>
 
@@ -84,31 +87,26 @@ const About: React.FC = () => {
             >
               <div className="prose prose-lg dark:prose-invert">
                 <p className="text-gray-700 dark:text-gray-300">
-                  Soy un desarrollador full-stack apasionado con más de 5 años de experiencia creando 
-                  soluciones digitales innovadoras y funcionales. Mi experiencia abarca desde desarrollo 
-                  web y móvil hasta aplicaciones de escritorio y sistemas empresariales complejos.
+                  {t('about.description1')}
                 </p>
                 
                 <p className="text-gray-700 dark:text-gray-300">
-                  Me especializo en tecnologías modernas como Flutter, React, Angular, Vue, Svelte, Python y Node.js. 
-                  Mi enfoque combina experiencia técnica con resolución creativa de problemas para entregar 
-                  soluciones que no solo funcionan perfectamente, sino que también brindan experiencias excepcionales.
+                  {t('about.description2')}
                 </p>
                 
                 <p className="text-gray-700 dark:text-gray-300">
-                  Ofrezco soluciones completas de software incluyendo aplicaciones web, móviles, de escritorio, 
-                  sistemas CRM, facturación electrónica, automatizaciones con IA y chatbots inteligentes.
+                  {t('about.description3')}
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                   <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">100+</h4>
-                  <p className="text-gray-600 dark:text-gray-400">Proyectos Completados</p>
+                  <p className="text-gray-600 dark:text-gray-400">{t('about.projectsCompleted')}</p>
                 </div>
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                   <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">5+</h4>
-                  <p className="text-gray-600 dark:text-gray-400">Años de Experiencia</p>
+                  <p className="text-gray-600 dark:text-gray-400">{t('about.yearsExperience')}</p>
                 </div>
               </div>
             </motion.div>
@@ -118,33 +116,33 @@ const About: React.FC = () => {
               className="space-y-8"
             >
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Habilidades y Tecnologías
+                {t('about.skillsTitle')}
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Frontend & Mobile</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">{t('about.frontendMobile')}</h4>
                   {skillCategories.frontend.map((skill) => (
                     <SkillBar key={skill.name} skill={skill} />
                   ))}
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Backend & Database</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">{t('about.backendDatabase')}</h4>
                   {skillCategories.backend.map((skill) => (
                     <SkillBar key={skill.name} skill={skill} />
                   ))}
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Herramientas & Cloud</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">{t('about.toolsCloud')}</h4>
                   {skillCategories.tools.map((skill) => (
                     <SkillBar key={skill.name} skill={skill} />
                   ))}
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">IA & Automatización</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">{t('about.aiAutomation')}</h4>
                   {skillCategories.design.map((skill) => (
                     <SkillBar key={skill.name} skill={skill} />
                   ))}

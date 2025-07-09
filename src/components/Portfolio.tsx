@@ -2,16 +2,18 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Filter } from 'lucide-react';
 import { projects } from '../data/portfolio';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Portfolio: React.FC = () => {
+  const { t } = useLanguage();
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const filters = [
-    { id: 'all', label: 'Todos los Proyectos' },
-    { id: 'web', label: 'Aplicaciones Web' },
-    { id: 'mobile', label: 'Apps Móviles' },
-    { id: 'fullstack', label: 'Full Stack' },
-    { id: 'desktop', label: 'Apps de Escritorio' }
+    { id: 'all', label: t('portfolio.allProjects') },
+    { id: 'web', label: t('portfolio.webApps') },
+    { id: 'mobile', label: t('portfolio.mobileApps') },
+    { id: 'fullstack', label: t('portfolio.fullStack') },
+    { id: 'desktop', label: t('portfolio.desktopApps') }
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -123,10 +125,10 @@ const Portfolio: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Mi Portafolio
+              {t('portfolio.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Una colección de proyectos que demuestran mis habilidades y pasión por crear experiencias digitales increíbles
+              {t('portfolio.subtitle')}
             </p>
           </motion.div>
 

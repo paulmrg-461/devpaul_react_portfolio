@@ -2,8 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Smartphone, Building2, Bot } from 'lucide-react';
 import { services } from '../data/portfolio';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Services: React.FC = () => {
+  const { t } = useLanguage();
+  
   const iconMap = {
     Code,
     Smartphone,
@@ -83,10 +86,10 @@ const Services: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Mis Servicios
+              {t('services.title')}
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Ofrezco servicios integrales de desarrollo para dar vida a tus ideas con tecnologías modernas
+              {t('services.subtitle')}
             </p>
           </motion.div>
 

@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero: React.FC = () => {
+  const { t } = useLanguage();
+  
   const socialLinks = [
     { icon: Github, href: 'https://github.com/devpaul', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/paulrealpe', label: 'LinkedIn' },
@@ -66,7 +69,7 @@ const Hero: React.FC = () => {
             variants={itemVariants}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4"
           >
-            Hi, I'm{' '}
+            {t('hero.title').split('Paul Realpe')[0]}{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
               Paul Realpe
             </span>
@@ -76,23 +79,21 @@ const Hero: React.FC = () => {
             variants={itemVariants}
             className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-4"
           >
-            Full-Stack Developer & Software Solutions Architect
+            {t('hero.subtitle')}
           </motion.p>
 
           <motion.p
             variants={itemVariants}
             className="text-lg text-blue-600 dark:text-blue-400 mb-8 font-medium"
           >
-            Flutter • React • Angular • Vue • Python • Node.js • AI Solutions
+            {t('hero.technologies')}
           </motion.p>
 
           <motion.p
             variants={itemVariants}
             className="text-lg text-gray-700 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
           >
-            Especializado en desarrollo multiplataforma y soluciones de software personalizadas. 
-            Creo aplicaciones web, móviles y de escritorio, sistemas CRM, facturación electrónica, 
-            automatizaciones con IA y chatbots inteligentes.
+            {t('hero.description')}
           </motion.p>
 
           <motion.div
@@ -105,7 +106,7 @@ const Hero: React.FC = () => {
               whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(59, 130, 246, 0.4)' }}
               whileTap={{ scale: 0.95 }}
             >
-              Get In Touch
+              {t('hero.getInTouch')}
             </motion.button>
 
             <motion.button
@@ -114,7 +115,7 @@ const Hero: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Download size={18} />
-              <span>Download CV</span>
+              <span>{t('hero.downloadCV')}</span>
             </motion.button>
           </motion.div>
 
