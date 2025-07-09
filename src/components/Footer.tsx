@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, ArrowUp } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -28,12 +31,12 @@ const Footer: React.FC = () => {
               className="text-center"
             >
               <p className="text-gray-300 mb-4">
-                Made with{' '}
+                {t('footer.madeWith')}{' '}
                 <Heart className="inline-block w-5 h-5 text-red-500 mx-1" />{' '}
-                by Paul Realpe
+                {t('footer.by')}
               </p>
               <p className="text-gray-500 text-sm">
-                © 2024 DevPaul. All rights reserved.
+                {t('footer.rights')}
               </p>
             </motion.div>
           </div>
