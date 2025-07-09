@@ -70,10 +70,10 @@ const About: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              About Me
+              Sobre Mí
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Passionate developer with 5+ years of experience creating innovative digital solutions
+              Desarrollador apasionado con más de 5 años de experiencia creando soluciones digitales innovadoras
             </p>
           </motion.div>
 
@@ -84,32 +84,31 @@ const About: React.FC = () => {
             >
               <div className="prose prose-lg dark:prose-invert">
                 <p className="text-gray-700 dark:text-gray-300">
-                  I'm a passionate full-stack developer with over 5 years of experience in creating 
-                  beautiful, functional, and user-friendly digital experiences. My journey in tech 
-                  started with a curiosity for how things work, which evolved into a deep love for 
-                  problem-solving through code.
+                  Soy un desarrollador full-stack apasionado con más de 5 años de experiencia creando 
+                  soluciones digitales innovadoras y funcionales. Mi experiencia abarca desde desarrollo 
+                  web y móvil hasta aplicaciones de escritorio y sistemas empresariales complejos.
                 </p>
                 
                 <p className="text-gray-700 dark:text-gray-300">
-                  I specialize in modern web technologies including React, Node.js, and cloud platforms. 
-                  My approach combines technical expertise with creative problem-solving to deliver 
-                  solutions that not only work flawlessly but also provide exceptional user experiences.
+                  Me especializo en tecnologías modernas como Flutter, React, Angular, Vue, Svelte, Python y Node.js. 
+                  Mi enfoque combina experiencia técnica con resolución creativa de problemas para entregar 
+                  soluciones que no solo funcionan perfectamente, sino que también brindan experiencias excepcionales.
                 </p>
                 
                 <p className="text-gray-700 dark:text-gray-300">
-                  When I'm not coding, you can find me exploring new technologies, contributing to 
-                  open-source projects, or sharing knowledge with the developer community.
+                  Ofrezco soluciones completas de software incluyendo aplicaciones web, móviles, de escritorio, 
+                  sistemas CRM, facturación electrónica, automatizaciones con IA y chatbots inteligentes.
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                  <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">50+</h4>
-                  <p className="text-gray-600 dark:text-gray-400">Projects Completed</p>
+                  <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">100+</h4>
+                  <p className="text-gray-600 dark:text-gray-400">Proyectos Completados</p>
                 </div>
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                   <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">5+</h4>
-                  <p className="text-gray-600 dark:text-gray-400">Years Experience</p>
+                  <p className="text-gray-600 dark:text-gray-400">Años de Experiencia</p>
                 </div>
               </div>
             </motion.div>
@@ -119,33 +118,33 @@ const About: React.FC = () => {
               className="space-y-8"
             >
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                Skills & Technologies
+                Habilidades y Tecnologías
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Frontend</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Frontend & Mobile</h4>
                   {skillCategories.frontend.map((skill) => (
                     <SkillBar key={skill.name} skill={skill} />
                   ))}
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Backend</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Backend & Database</h4>
                   {skillCategories.backend.map((skill) => (
                     <SkillBar key={skill.name} skill={skill} />
                   ))}
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Tools</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Herramientas & Cloud</h4>
                   {skillCategories.tools.map((skill) => (
                     <SkillBar key={skill.name} skill={skill} />
                   ))}
                 </div>
                 
                 <div>
-                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Design</h4>
+                  <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">IA & Automatización</h4>
                   {skillCategories.design.map((skill) => (
                     <SkillBar key={skill.name} skill={skill} />
                   ))}

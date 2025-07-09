@@ -33,9 +33,14 @@ const Navigation: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-gray-900 dark:text-white"
+            className="flex items-center space-x-2"
           >
-            DevPaul
+            <img 
+              src="/WhatsApp Image 2024-09-06 at 06.24.42.jpeg" 
+              alt="DevPaul Logo" 
+              className="w-10 h-10 object-contain"
+            />
+            <span className="text-2xl font-bold text-gray-900 dark:text-white">DevPaul</span>
           </motion.div>
 
           {/* Desktop Navigation */}

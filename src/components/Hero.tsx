@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
           >
             <div className="relative inline-block">
               <motion.img
-                src="https://images.pexels.com/photos/874158/pexels-photo-874158.jpeg?auto=compress&cs=tinysrgb&w=400"
+                src="/WhatsApp Image 2024-10-22 at 15.34.59.jpeg"
                 alt="Paul Realpe"
                 className="w-32 h-32 rounded-full mx-auto mb-6 object-cover border-4 border-white dark:border-gray-800 shadow-xl"
                 whileHover={{ scale: 1.1, rotate: 5 }}
@@ -74,17 +74,25 @@ const Hero: React.FC = () => {
 
           <motion.p
             variants={itemVariants}
-            className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8"
+            className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-4"
           >
-            Full-Stack Developer & UI/UX Designer
+            Full-Stack Developer & Software Solutions Architect
+          </motion.p>
+
+          <motion.p
+            variants={itemVariants}
+            className="text-lg text-blue-600 dark:text-blue-400 mb-8 font-medium"
+          >
+            Flutter • React • Angular • Vue • Python • Node.js • AI Solutions
           </motion.p>
 
           <motion.p
             variants={itemVariants}
             className="text-lg text-gray-700 dark:text-gray-400 mb-12 max-w-2xl mx-auto"
           >
-            I create beautiful, functional, and user-friendly digital experiences that bring ideas to life.
-            Passionate about modern technologies and clean code.
+            Especializado en desarrollo multiplataforma y soluciones de software personalizadas. 
+            Creo aplicaciones web, móviles y de escritorio, sistemas CRM, facturación electrónica, 
+            automatizaciones con IA y chatbots inteligentes.
           </motion.p>
 
           <motion.div

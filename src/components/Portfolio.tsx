@@ -7,11 +7,11 @@ const Portfolio: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const filters = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'web', label: 'Web Apps' },
-    { id: 'mobile', label: 'Mobile Apps' },
+    { id: 'all', label: 'Todos los Proyectos' },
+    { id: 'web', label: 'Aplicaciones Web' },
+    { id: 'mobile', label: 'Apps Móviles' },
     { id: 'fullstack', label: 'Full Stack' },
-    { id: 'desktop', label: 'Desktop Apps' }
+    { id: 'desktop', label: 'Apps de Escritorio' }
   ];
 
   const filteredProjects = activeFilter === 'all' 
@@ -123,10 +123,10 @@ const Portfolio: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              My Portfolio
+              Mi Portafolio
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              A collection of projects that showcase my skills and passion for creating amazing digital experiences
+              Una colección de proyectos que demuestran mis habilidades y pasión por crear experiencias digitales increíbles
             </p>
           </motion.div>
 

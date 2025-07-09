@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Smartphone, Palette, Cloud } from 'lucide-react';
+import { Code, Smartphone, Building2, Bot } from 'lucide-react';
 import { services } from '../data/portfolio';
 
 const Services: React.FC = () => {
   const iconMap = {
     Code,
     Smartphone,
-    Palette,
-    Cloud
+    Building2,
+    Bot
   };
 
   const containerVariants = {
@@ -83,10 +83,10 @@ const Services: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              My Services
+              Mis Servicios
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              I offer comprehensive development services to bring your ideas to life with modern technologies
+              Ofrezco servicios integrales de desarrollo para dar vida a tus ideas con tecnologías modernas
             </p>
           </motion.div>
 

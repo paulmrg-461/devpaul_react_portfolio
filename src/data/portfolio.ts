@@ -69,40 +69,57 @@ export const services: Service[] = [
     title: 'Web Development',
     description: 'Custom web applications built with modern technologies',
     icon: 'Code',
-    features: ['React & Vue.js', 'Node.js & Express', 'Database Design', 'API Integration']
+    features: ['React, Angular, Vue, Svelte', 'Node.js & Python', 'Bases de datos', 'APIs RESTful']
   },
   {
     id: '2',
-    title: 'Mobile Development',
-    description: 'Cross-platform mobile apps for iOS and Android',
+    title: 'Desarrollo Móvil',
+    description: 'Apps multiplataforma para iOS, Android y Web',
     icon: 'Smartphone',
-    features: ['React Native', 'Flutter', 'Native iOS/Android', 'App Store Deployment']
+    features: ['Flutter multiplataforma', 'Web, iOS, Android', 'Apps de escritorio', 'Publicación en tiendas']
   },
   {
     id: '3',
-    title: 'UI/UX Design',
-    description: 'Beautiful, intuitive user interfaces and experiences',
-    icon: 'Palette',
-    features: ['Figma & Sketch', 'Responsive Design', 'User Research', 'Prototyping']
+    title: 'Sistemas Empresariales',
+    description: 'CRM, facturación electrónica y gestión empresarial',
+    icon: 'Building2',
+    features: ['Sistemas CRM', 'Facturación electrónica', 'Gestión de inventarios', 'Reportes y analytics']
   },
   {
     id: '4',
-    title: 'DevOps & Cloud',
-    description: 'Scalable infrastructure and deployment solutions',
-    icon: 'Cloud',
-    features: ['AWS & Azure', 'Docker & Kubernetes', 'CI/CD Pipelines', 'Monitoring & Logging']
+    title: 'IA & Automatización',
+    description: 'Chatbots inteligentes y automatizaciones con IA',
+    icon: 'Bot',
+    features: ['Chatbots con IA', 'Automatización de procesos', 'Integración OpenAI', 'WebSockets en tiempo real']
   }
 ];
 
 export const skills: Skill[] = [
-  { name: 'React', level: 95, category: 'frontend' },
-  { name: 'TypeScript', level: 90, category: 'frontend' },
-  { name: 'Node.js', level: 85, category: 'backend' },
-  { name: 'Python', level: 80, category: 'backend' },
-  { name: 'PostgreSQL', level: 75, category: 'backend' },
+  // Frontend & Mobile
+  { name: 'Flutter', level: 95, category: 'frontend' },
+  { name: 'React', level: 90, category: 'frontend' },
+  { name: 'Angular', level: 85, category: 'frontend' },
+  { name: 'Vue.js', level: 85, category: 'frontend' },
+  { name: 'Svelte', level: 80, category: 'frontend' },
+  
+  // Backend & Database
+  { name: 'Node.js', level: 90, category: 'backend' },
+  { name: 'Python', level: 85, category: 'backend' },
+  { name: 'WebSockets', level: 85, category: 'backend' },
+  { name: 'PostgreSQL', level: 80, category: 'backend' },
   { name: 'MongoDB', level: 80, category: 'backend' },
-  { name: 'AWS', level: 70, category: 'tools' },
-  { name: 'Docker', level: 75, category: 'tools' },
-  { name: 'Figma', level: 85, category: 'design' },
-  { name: 'Adobe XD', level: 80, category: 'design' }
+  
+  // Tools & Cloud
+  { name: 'AWS', level: 75, category: 'tools' },
+  { name: 'Docker', level: 80, category: 'tools' },
+  { name: 'Git', level: 90, category: 'tools' },
+  { name: 'Firebase', level: 85, category: 'tools' },
+  
+  // AI & Automation
+  { name: 'OpenAI API', level: 85, category: 'design' },
+  { name: 'Chatbots', level: 90, category: 'design' },
+  { name: 'Automatización', level: 85, category: 'design' },
+  { name: 'Machine Learning', level: 75, category: 'design' }
 ];
+    title: 'Desarrollo Web',
+    description: 'Aplicaciones web personalizadas con tecnologías modernas',
