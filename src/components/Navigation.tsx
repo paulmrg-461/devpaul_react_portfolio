@@ -40,7 +40,7 @@ const Navigation: React.FC = () => {
             <img 
               src="/devpaul_logo.jpeg?auto=compress&cs=tinysrgb&w=100" 
               alt="DevPaul Logo" 
-              className="w-10 h-10 object-cover rounded-lg shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
+              className="w-8 h-8 object-cover rounded-lg shadow-lg border-2 border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
             />
             <span className="text-2xl font-bold text-gray-900 dark:text-white">DevPaul</span>
           </motion.div>
