@@ -103,6 +103,9 @@ const translations = {
     'clients.vista.description': 'Desarrollo de plataforma web y aplicaciones móviles para servicios empresariales especializados.',
     'clients.comunix.description': 'Soluciones tecnológicas innovadoras y desarrollo de software personalizado para comunidades digitales.',
     'clients.jirehfarma.description': 'Sistema de gestión farmacéutica con control de inventarios, ventas y cumplimiento de normativas sanitarias.',
+    'clients.centralAluminios.description': 'Desarrollo integral de sistema de gestión de inventarios, chatbot de atención personalizada, CRM de facturación e inventario y página web corporativa.',
+    'clients.centralAluminios.name': 'Central de Aluminios del Valle',
+    'clients.centralAluminios.category': 'Industrial',
     
     // Contact Section
     'contact.title': 'Contáctame',
@@ -214,6 +217,8 @@ const translations = {
     'clients.comunix.description': 'Innovative technological solutions and custom software development for digital communities.',
     'clients.jirehfarma.description': 'Pharmaceutical management system with inventory control, sales and compliance with health regulations.',
     'clients.centralAluminios.description': 'Comprehensive development of inventory management system, personalized customer service chatbot, invoicing and inventory CRM, and corporate website.',
+    'clients.centralAluminios.name': 'Central de Aluminios del Valle',
+    'clients.centralAluminios.category': 'Industrial',
     
     // Contact Section
     'contact.title': 'Get In Touch',

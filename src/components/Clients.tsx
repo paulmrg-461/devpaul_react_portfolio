@@ -51,10 +51,10 @@ const Clients: React.FC = () => {
     },
     {
       id: '7',
-      name: 'Central de Aluminios del Valle',
+      name: t('clients.centralAluminios.name'),
       icon: Building2,
       description: 'clients.centralAluminios.description',
-      category: 'Industrial'
+      category: t('clients.centralAluminios.category')
     }
   ];
 
