@@ -48,6 +48,13 @@ const Clients: React.FC = () => {
       icon: Pill,
       description: 'clients.jirehfarma.description',
       category: 'Salud'
+    },
+    {
+      id: '7',
+      name: 'Central de Aluminios del Valle',
+      icon: Building2,
+      description: 'clients.centralAluminios.description',
+      category: 'Industrial'
     }
   ];
 

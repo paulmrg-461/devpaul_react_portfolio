@@ -213,6 +213,7 @@ const translations = {
     'clients.vista.description': 'Development of web platform and mobile applications for specialized business services.',
     'clients.comunix.description': 'Innovative technological solutions and custom software development for digital communities.',
     'clients.jirehfarma.description': 'Pharmaceutical management system with inventory control, sales and compliance with health regulations.',
+    'clients.centralAluminios.description': 'Comprehensive development of inventory management system, personalized customer service chatbot, invoicing and inventory CRM, and corporate website.',
     
     // Contact Section
     'contact.title': 'Get In Touch',
