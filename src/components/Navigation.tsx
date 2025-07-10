@@ -10,13 +10,14 @@ const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
-  const activeSection = useScrollSpy(['home', 'about', 'portfolio', 'services', 'contact']);
+  const activeSection = useScrollSpy(['home', 'about', 'portfolio', 'services', 'clients', 'contact']);
 
   const navItems = [
     { id: 'home', label: t('nav.home') },
     { id: 'about', label: t('nav.about') },
     { id: 'portfolio', label: t('nav.portfolio') },
     { id: 'services', label: t('nav.services') },
+    { id: 'clients', label: t('nav.clients') },
     { id: 'contact', label: t('nav.contact') }
   ];
 

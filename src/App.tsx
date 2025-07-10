@@ -10,6 +10,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Portfolio from './components/Portfolio';
 import Services from './components/Services';
+import Clients from './components/Clients';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -28,6 +29,7 @@ function App() {
                   <About />
                   <Portfolio />
                   <Services />
+                  <Clients />
                   <Contact />
                 </Suspense>
               </main>
