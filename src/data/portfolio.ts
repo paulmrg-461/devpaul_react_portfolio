@@ -66,31 +66,31 @@ export const projects: Project[] = [
 export const services: Service[] = [
   {
     id: '1',
-    title: 'Web Development',
-    description: 'Custom web applications built with modern technologies',
+    title: 'services.webDev.title',
+    description: 'services.webDev.description',
     icon: 'Code',
-    features: ['React, Angular, Vue, Svelte', 'Node.js & Python', 'Bases de datos', 'APIs RESTful']
+    features: ['services.webDev.feature1', 'services.webDev.feature2', 'services.webDev.feature3', 'services.webDev.feature4']
   },
   {
     id: '2',
-    title: 'Desarrollo Móvil',
-    description: 'Apps multiplataforma para iOS, Android y Web',
+    title: 'services.mobileDev.title',
+    description: 'services.mobileDev.description',
     icon: 'Smartphone',
-    features: ['Flutter multiplataforma', 'Web, iOS, Android', 'Apps de escritorio', 'Publicación en tiendas']
+    features: ['services.mobileDev.feature1', 'services.mobileDev.feature2', 'services.mobileDev.feature3', 'services.mobileDev.feature4']
   },
   {
     id: '3',
-    title: 'Sistemas Empresariales',
-    description: 'CRM, facturación electrónica y gestión empresarial',
+    title: 'services.enterprise.title',
+    description: 'services.enterprise.description',
     icon: 'Building2',
-    features: ['Sistemas CRM', 'Facturación electrónica', 'Gestión de inventarios', 'Reportes y analytics']
+    features: ['services.enterprise.feature1', 'services.enterprise.feature2', 'services.enterprise.feature3', 'services.enterprise.feature4']
   },
   {
     id: '4',
-    title: 'IA & Automatización',
-    description: 'Chatbots inteligentes y automatizaciones con IA',
+    title: 'services.aiAutomation.title',
+    description: 'services.aiAutomation.description',
     icon: 'Bot',
-    features: ['Chatbots con IA', 'Automatización de procesos', 'Integración OpenAI', 'WebSockets en tiempo real']
+    features: ['services.aiAutomation.feature1', 'services.aiAutomation.feature2', 'services.aiAutomation.feature3', 'services.aiAutomation.feature4']
   }
 ];
 

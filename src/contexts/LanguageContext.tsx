@@ -62,6 +62,35 @@ const translations = {
     'services.title': 'Mis Servicios',
     'services.subtitle': 'Ofrezco servicios integrales de desarrollo para dar vida a tus ideas con tecnologías modernas',
     
+    // Services Details
+    'services.webDev.title': 'Desarrollo Web',
+    'services.webDev.description': 'Aplicaciones web personalizadas con tecnologías modernas',
+    'services.webDev.feature1': 'React, Angular, Vue, Svelte',
+    'services.webDev.feature2': 'Node.js & Python',
+    'services.webDev.feature3': 'Bases de datos',
+    'services.webDev.feature4': 'APIs RESTful',
+    
+    'services.mobileDev.title': 'Desarrollo Móvil',
+    'services.mobileDev.description': 'Apps multiplataforma para iOS, Android y Web',
+    'services.mobileDev.feature1': 'Flutter multiplataforma',
+    'services.mobileDev.feature2': 'Web, iOS, Android',
+    'services.mobileDev.feature3': 'Apps de escritorio',
+    'services.mobileDev.feature4': 'Publicación en tiendas',
+    
+    'services.enterprise.title': 'Sistemas Empresariales',
+    'services.enterprise.description': 'CRM, facturación electrónica y gestión empresarial',
+    'services.enterprise.feature1': 'Sistemas CRM',
+    'services.enterprise.feature2': 'Facturación electrónica',
+    'services.enterprise.feature3': 'Gestión de inventarios',
+    'services.enterprise.feature4': 'Reportes y analytics',
+    
+    'services.aiAutomation.title': 'IA & Automatización',
+    'services.aiAutomation.description': 'Chatbots inteligentes y automatizaciones con IA',
+    'services.aiAutomation.feature1': 'Chatbots con IA',
+    'services.aiAutomation.feature2': 'Automatización de procesos',
+    'services.aiAutomation.feature3': 'Integración OpenAI',
+    'services.aiAutomation.feature4': 'WebSockets en tiempo real',
+    
     // Contact Section
     'contact.title': 'Contáctame',
     'contact.subtitle': '¿Listo para comenzar tu próximo proyecto? Trabajemos juntos para crear algo increíble.',
@@ -129,6 +158,35 @@ const translations = {
     // Services Section
     'services.title': 'My Services',
     'services.subtitle': 'I offer comprehensive development services to bring your ideas to life with modern technologies',
+    
+    // Services Details
+    'services.webDev.title': 'Web Development',
+    'services.webDev.description': 'Custom web applications built with modern technologies',
+    'services.webDev.feature1': 'React, Angular, Vue, Svelte',
+    'services.webDev.feature2': 'Node.js & Python',
+    'services.webDev.feature3': 'Databases',
+    'services.webDev.feature4': 'RESTful APIs',
+    
+    'services.mobileDev.title': 'Mobile Development',
+    'services.mobileDev.description': 'Cross-platform apps for iOS, Android and Web',
+    'services.mobileDev.feature1': 'Cross-platform Flutter',
+    'services.mobileDev.feature2': 'Web, iOS, Android',
+    'services.mobileDev.feature3': 'Desktop applications',
+    'services.mobileDev.feature4': 'App store publishing',
+    
+    'services.enterprise.title': 'Enterprise Systems',
+    'services.enterprise.description': 'CRM, electronic invoicing and business management',
+    'services.enterprise.feature1': 'CRM Systems',
+    'services.enterprise.feature2': 'Electronic invoicing',
+    'services.enterprise.feature3': 'Inventory management',
+    'services.enterprise.feature4': 'Reports and analytics',
+    
+    'services.aiAutomation.title': 'AI & Automation',
+    'services.aiAutomation.description': 'Intelligent chatbots and AI automations',
+    'services.aiAutomation.feature1': 'AI Chatbots',
+    'services.aiAutomation.feature2': 'Process automation',
+    'services.aiAutomation.feature3': 'OpenAI integration',
+    'services.aiAutomation.feature4': 'Real-time WebSockets',
     
     // Contact Section
     'contact.title': 'Get In Touch',
