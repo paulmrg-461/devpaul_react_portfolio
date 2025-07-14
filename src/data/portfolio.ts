@@ -1,4 +1,5 @@
-import { Project, Service, Skill } from '../types';
+import { Project, Service, Skill, Client } from '../types';
+import { Building2, ShoppingCart, Car, Eye, Users, Pill } from 'lucide-react';
 
 export const projects: Project[] = [
   {
@@ -120,4 +121,56 @@ export const skills: Skill[] = [
   { name: 'Chatbots', level: 90, category: 'design' },
   { name: 'Automatización', level: 85, category: 'design' },
   { name: 'Machine Learning', level: 75, category: 'design' }
+];
+
+export const getClients = (t: (key: string) => string): Client[] => [
+  {
+      id: '1',
+      name: 'MegaHogar Supermercados',
+      icon: ShoppingCart,
+      description: t('clients.megahogar.description'),
+      category: 'Retail'
+    },
+    {
+      id: '2',
+      name: 'Grupo Empresarial G&H SAS',
+      icon: Building2,
+      description: t('clients.gh.description'),
+      category: 'Empresarial'
+    },
+    {
+      id: '3',
+      name: 'CDA Panamericana Popayán',
+      icon: Car,
+      description: t('clients.cda.description'),
+      category: 'Automotriz'
+    },
+    {
+      id: '4',
+      name: 'Grupo Vista SAS',
+      icon: Eye,
+      description: t('clients.vista.description'),
+      category: 'Servicios'
+    },
+    {
+      id: '5',
+      name: 'Comunix',
+      icon: Users,
+      description: t('clients.comunix.description'),
+      category: 'Tecnología'
+    },
+    {
+      id: '6',
+      name: 'Farmacia Jirehfarma',
+      icon: Pill,
+      description: t('clients.jirehfarma.description'),
+      category: 'Salud'
+    },
+    {
+      id: '7',
+      name: t('clients.centralAluminios.name'),
+      icon: Building2,
+      description: t('clients.centralAluminios.description'),
+      category: t('clients.centralAluminios.category')
+    }
 ];

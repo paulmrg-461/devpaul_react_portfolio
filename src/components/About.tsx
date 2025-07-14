@@ -90,11 +90,11 @@ const About: React.FC = () => {
                   {t('about.description1')}
                 </p>
                 
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300 mt-4">
                   {t('about.description2')}
                 </p>
                 
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-gray-700 dark:text-gray-300 mt-4">
                   {t('about.description3')}
                 </p>
               </div>

@@ -34,3 +34,11 @@ export interface ThemeContextType {
   isDark: boolean;
   toggleTheme: () => void;
 }
+
+export interface Client {
+  id: string;
+  name: string;
+  icon: any;
+  description: string;
+  category: string;
+}
