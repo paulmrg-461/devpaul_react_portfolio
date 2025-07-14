@@ -125,52 +125,52 @@ export const skills: Skill[] = [
 
 export const getClients = (t: (key: string) => string): Client[] => [
   {
-      id: '1',
-      name: 'MegaHogar Supermercados',
-      icon: ShoppingCart,
-      description: t('clients.megahogar.description'),
-      category: 'Retail'
-    },
-    {
-      id: '2',
-      name: 'Grupo Empresarial G&H SAS',
-      icon: Building2,
-      description: t('clients.gh.description'),
-      category: 'Empresarial'
-    },
-    {
-      id: '3',
-      name: 'CDA Panamericana Popayán',
-      icon: Car,
-      description: t('clients.cda.description'),
-      category: 'Automotriz'
-    },
-    {
-      id: '4',
-      name: 'Grupo Vista SAS',
-      icon: Eye,
-      description: t('clients.vista.description'),
-      category: 'Servicios'
-    },
-    {
-      id: '5',
-      name: 'Comunix',
-      icon: Users,
-      description: t('clients.comunix.description'),
-      category: 'Tecnología'
-    },
-    {
-      id: '6',
-      name: 'Farmacia Jirehfarma',
-      icon: Pill,
-      description: t('clients.jirehfarma.description'),
-      category: 'Salud'
-    },
-    {
-      id: '7',
-      name: t('clients.centralAluminios.name'),
-      icon: Building2,
-      description: t('clients.centralAluminios.description'),
-      category: t('clients.centralAluminios.category')
-    }
+    id: '1',
+    name: t('clients.megahogar.name'),
+    icon: ShoppingCart,
+    description: t('clients.megahogar.description'),
+    category: t('clients.megahogar.category')
+  },
+  {
+    id: '2',
+    name: t('clients.gh.name'),
+    icon: Building2,
+    description: t('clients.gh.description'),
+    category: t('clients.gh.category')
+  },
+  {
+    id: '3',
+    name: t('clients.cda.name'),
+    icon: Car,
+    description: t('clients.cda.description'),
+    category: t('clients.cda.category')
+  },
+  {
+    id: '4',
+    name: t('clients.vista.name'),
+    icon: Eye,
+    description: t('clients.vista.description'),
+    category: t('clients.vista.category')
+  },
+  {
+    id: '5',
+    name: t('clients.comunix.name'),
+    icon: Users,
+    description: t('clients.comunix.description'),
+    category: t('clients.comunix.category')
+  },
+  {
+    id: '6',
+    name: t('clients.jirehfarma.name'),
+    icon: Pill,
+    description: t('clients.jirehfarma.description'),
+    category: t('clients.jirehfarma.category')
+  },
+  {
+    id: '7',
+    name: t('clients.centralAluminios.name'),
+    icon: Building2,
+    description: t('clients.centralAluminios.description'),
+    category: t('clients.centralAluminios.category')
+  }
 ];
