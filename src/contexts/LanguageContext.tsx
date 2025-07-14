@@ -154,7 +154,7 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'Hi, I\'m Paul Realpe',
+    'hero.title': 'Hi, I am Paul Realpe',
     'hero.subtitle': 'Full-Stack Developer & Software Solutions Architect',
     'hero.technologies': 'Flutter • React • Angular • Vue • Python • Node.js • AI Solutions',
     'hero.description': 'Specialized in cross-platform development and custom software solutions. I create web, mobile and desktop applications, CRM systems, electronic invoicing, AI automations and intelligent chatbots.',
@@ -164,7 +164,7 @@ const translations = {
     // About Section
     'about.title': 'About Me',
     'about.subtitle': 'Passionate developer with 5+ years of experience creating innovative digital solutions',
-    'about.description1': 'I\'m a passionate full-stack developer with over 5 years of experience creating innovative and functional digital solutions. My experience spans from web and mobile development to desktop applications and complex enterprise systems.',
+    'about.description1': 'I am a passionate full-stack developer with over 5 years of experience creating innovative and functional digital solutions. My experience spans from web and mobile development to desktop applications and complex enterprise systems.',
     'about.description2': 'I specialize in modern technologies like Flutter, React, Angular, Vue, Svelte, Python and Node.js. My approach combines technical expertise with creative problem-solving to deliver solutions that not only work perfectly but also provide exceptional experiences.',
     'about.description3': 'I offer complete software solutions including web, mobile, desktop applications, CRM systems, electronic invoicing, AI automations and intelligent chatbots.',
     'about.projectsCompleted': 'Projects Completed',
@@ -219,7 +219,7 @@ const translations = {
     
     // Clients Section
     'clients.title': 'Clients Who Trust Me',
-    'clients.subtitle': 'I\'ve had the privilege of working with leading companies across different sectors, developing technological solutions that drive their growth',
+    'clients.subtitle': 'I have had the privilege of working with leading companies across different sectors, developing technological solutions that drive their growth',
     'clients.trustedBy': 'Companies that trust DevPaul',
     
     'clients.megahogar.name': 'MegaHogar Supermercados',
@@ -246,8 +246,8 @@ const translations = {
     
     // Contact Section
     'contact.title': 'Get In Touch',
-    'contact.subtitle': 'Ready to start your next project? Let\'s work together to create something amazing.',
-    'contact.letsConnect': 'Let\'s Connect',
+    'contact.subtitle': 'Ready to start your next project? Let us work together to create something amazing.',
+    'contact.letsConnect': 'Let us Connect',
     'contact.name': 'Name',
     'contact.email': 'Email',
     'contact.subject': 'Subject',
@@ -262,7 +262,7 @@ const translations = {
     'contact.emailPlaceholder': 'your@email.com',
     'contact.subjectPlaceholder': 'Project discussion',
     'contact.messagePlaceholder': 'Tell me about your project...',
-    'contact.thankYou': 'Thank you for your message! I\'ll get back to you soon.',
+    'contact.thankYou': 'Thank you for your message! I will get back to you soon.',
     
     // Footer
     'footer.madeWith': 'Made with',
