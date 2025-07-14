@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, Facebook, Instagram, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero: React.FC = () => {
@@ -9,7 +9,10 @@ const Hero: React.FC = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/devpaul', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com/in/paulrealpe', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:co.devpaul@gmail.com', label: 'Email' }
+    { icon: Mail, href: 'mailto:co.devpaul@gmail.com', label: 'Email' },
+    { icon: Facebook, href: 'https://facebook.com/devpaul', label: 'Facebook' },
+    { icon: Instagram, href: 'https://instagram.com/devpaul', label: 'Instagram' },
+    { icon: MessageCircle, href: 'https://wa.me/573013495689', label: 'WhatsApp' }
   ];
 
   const containerVariants = {
@@ -121,7 +124,7 @@ const Hero: React.FC = () => {
 
           <motion.div
             variants={itemVariants}
-            className="flex justify-center space-x-6"
+            className="flex justify-center flex-wrap gap-4"
           >
             {socialLinks.map((link) => (
               <motion.a

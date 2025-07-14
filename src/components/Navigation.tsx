@@ -10,13 +10,14 @@ const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useLanguage();
-  const activeSection = useScrollSpy(['home', 'about', 'portfolio', 'services', 'contact']);
+  const activeSection = useScrollSpy(['home', 'about', 'portfolio', 'services', 'clients', 'contact']);
 
   const navItems = [
     { id: 'home', label: t('nav.home') },
     { id: 'about', label: t('nav.about') },
     { id: 'portfolio', label: t('nav.portfolio') },
     { id: 'services', label: t('nav.services') },
+    { id: 'clients', label: t('nav.clients') },
     { id: 'contact', label: t('nav.contact') }
   ];
 
@@ -51,7 +52,7 @@ const Navigation: React.FC = () => {
               <motion.button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors ${
+                className={`relative px-2 py-2 text-sm font-small transition-colors ${
                   activeSection === item.id
                     ? 'text-blue-600 dark:text-blue-400'
                     : 'text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'

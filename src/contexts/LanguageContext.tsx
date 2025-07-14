@@ -25,6 +25,7 @@ const translations = {
     'nav.about': 'Sobre Mí',
     'nav.portfolio': 'Portafolio',
     'nav.services': 'Servicios',
+    'nav.clients': 'Clientes',
     'nav.contact': 'Contacto',
     
     // Hero Section
@@ -91,6 +92,21 @@ const translations = {
     'services.aiAutomation.feature3': 'Integración OpenAI',
     'services.aiAutomation.feature4': 'WebSockets en tiempo real',
     
+    // Clients Section
+    'clients.title': 'Clientes que Confían en Mí',
+    'clients.subtitle': 'He tenido el privilegio de trabajar con empresas líderes en diferentes sectores, desarrollando soluciones tecnológicas que impulsan su crecimiento',
+    'clients.trustedBy': 'Empresas que confían en DevPaul',
+    
+    'clients.megahogar.description': 'Desarrollo de sistema de gestión integral para cadena de supermercados, incluyendo inventarios, ventas y facturación electrónica.',
+    'clients.gh.description': 'Soluciones empresariales personalizadas y sistemas de gestión para optimizar procesos internos y mejorar la productividad.',
+    'clients.cda.description': 'Sistema de gestión para centro de diagnóstico automotriz con control de citas, reportes técnicos y certificaciones.',
+    'clients.vista.description': 'Desarrollo de plataforma web y aplicaciones móviles para servicios empresariales especializados.',
+    'clients.comunix.description': 'Soluciones tecnológicas innovadoras y desarrollo de software personalizado para comunidades digitales.',
+    'clients.jirehfarma.description': 'Sistema de gestión farmacéutica con control de inventarios, ventas y cumplimiento de normativas sanitarias.',
+    'clients.centralAluminios.description': 'Desarrollo integral de sistema de gestión de inventarios, chatbot de atención personalizada, CRM de facturación e inventario y página web corporativa.',
+    'clients.centralAluminios.name': 'Central de Aluminios del Valle',
+    'clients.centralAluminios.category': 'Industrial',
+    
     // Contact Section
     'contact.title': 'Contáctame',
     'contact.subtitle': '¿Listo para comenzar tu próximo proyecto? Trabajemos juntos para crear algo increíble.',
@@ -122,6 +138,7 @@ const translations = {
     'nav.about': 'About',
     'nav.portfolio': 'Portfolio',
     'nav.services': 'Services',
+    'nav.clients': 'Clients',
     'nav.contact': 'Contact',
     
     // Hero Section
@@ -187,6 +204,21 @@ const translations = {
     'services.aiAutomation.feature2': 'Process automation',
     'services.aiAutomation.feature3': 'OpenAI integration',
     'services.aiAutomation.feature4': 'Real-time WebSockets',
+    
+    // Clients Section
+    'clients.title': 'Clients Who Trust Me',
+    'clients.subtitle': 'I\'ve had the privilege of working with leading companies across different sectors, developing technological solutions that drive their growth',
+    'clients.trustedBy': 'Companies that trust DevPaul',
+    
+    'clients.megahogar.description': 'Development of comprehensive management system for supermarket chain, including inventory, sales and electronic invoicing.',
+    'clients.gh.description': 'Custom enterprise solutions and management systems to optimize internal processes and improve productivity.',
+    'clients.cda.description': 'Management system for automotive diagnostic center with appointment control, technical reports and certifications.',
+    'clients.vista.description': 'Development of web platform and mobile applications for specialized business services.',
+    'clients.comunix.description': 'Innovative technological solutions and custom software development for digital communities.',
+    'clients.jirehfarma.description': 'Pharmaceutical management system with inventory control, sales and compliance with health regulations.',
+    'clients.centralAluminios.description': 'Comprehensive development of inventory management system, personalized customer service chatbot, invoicing and inventory CRM, and corporate website.',
+    'clients.centralAluminios.name': 'Central de Aluminios del Valle',
+    'clients.centralAluminios.category': 'Industrial',
     
     // Contact Section
     'contact.title': 'Get In Touch',

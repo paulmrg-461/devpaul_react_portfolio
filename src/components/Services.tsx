@@ -52,10 +52,10 @@ const Services: React.FC = () => {
             <IconComponent size={32} className="text-white" />
           </div>
           <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-            {service.title}
+            {t(service.title)}
           </h3>
           <p className="text-gray-600 dark:text-gray-400">
-            {service.description}
+            {t(service.description)}
           </p>
         </div>
         
@@ -63,7 +63,7 @@ const Services: React.FC = () => {
           {service.features.map((feature, index) => (
             <li key={index} className="flex items-center text-gray-700 dark:text-gray-300">
               <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
-              {feature}
+              {t(feature)}
             </li>
           ))}
         </ul>
