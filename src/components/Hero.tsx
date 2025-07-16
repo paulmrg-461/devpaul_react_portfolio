@@ -113,6 +113,14 @@ const Hero: React.FC = () => {
             </motion.button>
 
             <motion.button
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = 'https://drive.google.com/uc?export=download&id=121oSrMUgK6HPwYKGc-UKcViHSQJ1s9WQ';
+                link.setAttribute('download', 'Paul_Realpe_CV.pdf');
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
               className="px-8 py-3 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-full font-semibold hover:border-blue-600 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400 transition-all duration-300 flex items-center space-x-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

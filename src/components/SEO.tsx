@@ -11,7 +11,7 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'Paul Realpe - Full-Stack Developer & UI/UX Designer',
+  title = 'DevPaul - Full-Stack Developer',
   description = 'Professional full-stack developer and UI/UX designer creating beautiful, functional, and user-friendly digital experiences. Specializing in React, Node.js, and modern web technologies.',
   keywords = 'Paul Realpe, DevPaul, Full-Stack Developer, UI/UX Designer, React, Node.js, JavaScript, TypeScript, Web Development, Mobile Development',
   author = 'Paul Realpe',
