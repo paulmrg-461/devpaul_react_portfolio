@@ -1,67 +1,106 @@
-import { Project, Service, Skill } from '../types';
+import { Project, Service, Skill, Client } from '../types';
+import { Building2, ShoppingCart, Car, Eye, Users, Pill } from 'lucide-react';
 
-export const projects: Project[] = [
+const projectData = [
   {
     id: '1',
-    title: 'E-Commerce Platform',
-    description: 'Full-stack e-commerce solution with React, Node.js, and MongoDB',
-    image: 'https://images.pexels.com/photos/shopping-cart-on-gray-surface-3739975.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/devpaul/ecommerce',
-    category: 'fullstack'
+    slug: 'todoApp',
+    image: 'https://images.pexels.com/photos/7014340/pexels-photo-7014340.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['Flutter', 'N8N', 'Deepseek', 'Vectorial postgres'],
+    liveUrl: 'https://example.com/todo-app',
+    githubUrl: 'https://github.com/devpaul/todo-app',
+    category: 'mobile'
   },
   {
     id: '2',
-    title: 'Task Management App',
-    description: 'Collaborative task management with real-time updates',
-    image: 'https://images.pexels.com/photos/7014340/pexels-photo-7014340.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React', 'TypeScript', 'Firebase', 'Tailwind CSS'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/devpaul/taskmanager',
+    slug: 'centralAluminios',
+    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['React', 'n8n', 'FastAPI', 'Deepseek'],
+    liveUrl: 'https://example.com/central-aluminios',
+    githubUrl: 'https://github.com/devpaul/central-aluminios',
     category: 'web'
   },
   {
     id: '3',
-    title: 'Weather Dashboard',
-    description: 'Beautiful weather dashboard with location-based forecasts',
-    image: 'https://images.pexels.com/photos/1530423/pexels-photo-1530423.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React', 'OpenWeather API', 'Chart.js', 'Geolocation'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/devpaul/weather-dashboard',
-    category: 'web'
+    slug: 'diegoLopez',
+    image: 'https://images.pexels.com/photos/318236/pexels-photo-318236.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['Flutter', 'NestJS', 'SocketIO'],
+    liveUrl: 'https://example.com/diego-lopez',
+    githubUrl: 'https://github.com/devpaul/diego-lopez',
+    category: 'mobile'
   },
   {
     id: '4',
-    title: 'Mobile Banking App',
-    description: 'Secure mobile banking application with biometric authentication',
-    image: 'https://images.pexels.com/photos/318236/pexels-photo-318236.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React Native', 'Redux', 'Node.js', 'PostgreSQL'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/devpaul/mobile-banking',
+    slug: 'cdaPopayan',
+    image: 'https://images.pexels.com/photos/1530423/pexels-photo-1530423.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['Flutter', 'NestJS', 'SocketIO', 'push notifications'],
+    liveUrl: 'https://example.com/cda-popayan',
+    githubUrl: 'https://github.com/devpaul/cda-popayan',
     category: 'mobile'
   },
   {
     id: '5',
-    title: 'Portfolio Website',
-    description: 'Modern portfolio website with animations and dark mode',
-    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['React', 'TypeScript', 'Framer Motion', 'Tailwind CSS'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/devpaul/portfolio',
-    category: 'web'
+    slug: 'codigoTransito',
+    image: 'https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['Flutter', 'N8n', 'OpenAI Fine Tuned'],
+    liveUrl: 'https://example.com/codigo-transito',
+    githubUrl: 'https://github.com/devpaul/codigo-transito',
+    category: 'mobile'
   },
   {
     id: '6',
-    title: 'Desktop Analytics Tool',
-    description: 'Cross-platform desktop application for data analytics',
-    image: 'https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['Electron', 'React', 'D3.js', 'SQLite'],
-    liveUrl: 'https://example.com',
-    githubUrl: 'https://github.com/devpaul/analytics-tool',
-    category: 'desktop'
+    slug: 'devpaulLoans',
+    image: 'https://images.pexels.com/photos/shopping-cart-on-gray-surface-3739975.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['Flutter', 'Firebase Auth', 'Firestore', 'Cloud Functions', 'Push notifications'],
+    liveUrl: 'https://example.com/devpaul-loans',
+    githubUrl: 'https://github.com/devpaul/devpaul-loans',
+    category: 'mobile'
+  },
+  {
+    id: '7',
+    slug: 'schoolManager',
+    image: 'https://images.pexels.com/photos/7014340/pexels-photo-7014340.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['Flutter', 'Firebase Auth', 'Firestore', 'Cloud Functions', 'Push notifications'],
+    liveUrl: 'https://example.com/school-manager',
+    githubUrl: 'https://github.com/devpaul/school-manager',
+    category: 'mobile'
+  },
+  {
+    id: '8',
+    slug: 'deliveries',
+    image: 'https://images.pexels.com/photos/1530423/pexels-photo-1530423.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['Flutter', 'NestJS', 'Hasura'],
+    liveUrl: 'https://example.com/deliveries',
+    githubUrl: 'https://github.com/devpaul/deliveries',
+    category: 'fullstack'
+  },
+  {
+    id: '9',
+    slug: 'grupoVista',
+    image: 'https://images.pexels.com/photos/318236/pexels-photo-318236.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['ReactJS', 'Flutter', 'NestJS', 'n8n', 'OpenAI'],
+    liveUrl: 'https://example.com/grupo-vista',
+    githubUrl: 'https://github.com/devpaul/grupo-vista',
+    category: 'fullstack'
+  },
+  {
+    id: '10',
+    slug: 'asistenciaAngular',
+    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['Angular', 'Firebase Auth', 'Firestore', 'Cloud Functions', 'Push notifications'],
+    liveUrl: 'https://example.com/asistencia-angular',
+    githubUrl: 'https://github.com/devpaul/asistencia-angular',
+    category: 'web'
   }
 ];
+
+export const getProjects = (t: (key: string) => string): Project[] => {
+  return projectData.map(project => ({
+    ...project,
+    title: t(`project.${project.slug}.title`),
+    description: t(`project.${project.slug}.description`)
+  }));
+};
 
 export const services: Service[] = [
   {
@@ -111,13 +150,67 @@ export const skills: Skill[] = [
   
   // Tools & Cloud
   { name: 'AWS', level: 75, category: 'tools' },
+  { name: 'Azure', level: 85, category: 'tools' },
   { name: 'Docker', level: 80, category: 'tools' },
   { name: 'Git', level: 90, category: 'tools' },
   { name: 'Firebase', level: 85, category: 'tools' },
   
   // AI & Automation
   { name: 'OpenAI API', level: 85, category: 'design' },
+  { name: 'Web Scraping', level: 85, category: 'design' },
   { name: 'Chatbots', level: 90, category: 'design' },
   { name: 'Automatización', level: 85, category: 'design' },
   { name: 'Machine Learning', level: 75, category: 'design' }
+];
+
+export const getClients = (t: (key: string) => string): Client[] => [
+  {
+    id: '1',
+    name: t('clients.megahogar.name'),
+    icon: ShoppingCart,
+    description: t('clients.megahogar.description'),
+    category: t('clients.megahogar.category')
+  },
+  {
+    id: '2',
+    name: t('clients.gh.name'),
+    icon: Building2,
+    description: t('clients.gh.description'),
+    category: t('clients.gh.category')
+  },
+  {
+    id: '3',
+    name: t('clients.cda.name'),
+    icon: Car,
+    description: t('clients.cda.description'),
+    category: t('clients.cda.category')
+  },
+  {
+    id: '4',
+    name: t('clients.vista.name'),
+    icon: Eye,
+    description: t('clients.vista.description'),
+    category: t('clients.vista.category')
+  },
+  // {
+  //   id: '5',
+  //   name: t('clients.comunix.name'),
+  //   icon: Users,
+  //   description: t('clients.comunix.description'),
+  //   category: t('clients.comunix.category')
+  // },
+  {
+    id: '5',
+    name: t('clients.jirehfarma.name'),
+    icon: Pill,
+    description: t('clients.jirehfarma.description'),
+    category: t('clients.jirehfarma.category')
+  },
+  {
+    id: '6',
+    name: t('clients.centralAluminios.name'),
+    icon: Building2,
+    description: t('clients.centralAluminios.description'),
+    category: t('clients.centralAluminios.category')
+  }
 ];

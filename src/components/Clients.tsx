@@ -1,63 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building2, ShoppingCart, Car, Eye, Users, Pill } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { getClients } from '../data/portfolio';
 
 const Clients: React.FC = () => {
   const { t } = useLanguage();
-
-  const clients = [
-    {
-      id: '1',
-      name: 'MegaHogar Supermercados',
-      icon: ShoppingCart,
-      description: 'clients.megahogar.description',
-      category: 'Retail'
-    },
-    {
-      id: '2',
-      name: 'Grupo Empresarial G&H SAS',
-      icon: Building2,
-      description: 'clients.gh.description',
-      category: 'Empresarial'
-    },
-    {
-      id: '3',
-      name: 'CDA Panamericana Popayán',
-      icon: Car,
-      description: 'clients.cda.description',
-      category: 'Automotriz'
-    },
-    {
-      id: '4',
-      name: 'Grupo Vista SAS',
-      icon: Eye,
-      description: 'clients.vista.description',
-      category: 'Servicios'
-    },
-    {
-      id: '5',
-      name: 'Comunix',
-      icon: Users,
-      description: 'clients.comunix.description',
-      category: 'Tecnología'
-    },
-    {
-      id: '6',
-      name: 'Farmacia Jirehfarma',
-      icon: Pill,
-      description: 'clients.jirehfarma.description',
-      category: 'Salud'
-    },
-    {
-      id: '7',
-      name: t('clients.centralAluminios.name'),
-      icon: Building2,
-      description: 'clients.centralAluminios.description',
-      category: t('clients.centralAluminios.category')
-    }
-  ];
-
+  const clients = getClients(t);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -82,7 +30,7 @@ const Clients: React.FC = () => {
     }
   };
 
-  const ClientCard: React.FC<{ client: typeof clients[0] }> = ({ client }) => {
+  const ClientCard: React.FC<{ client: ReturnType<typeof getClients>[0] }> = ({ client }) => {
     const IconComponent = client.icon;
 
     return (
@@ -106,7 +54,7 @@ const Clients: React.FC = () => {
         </div>
         
         <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-          {t(client.description)}
+          {client.description}
         </p>
       </motion.div>
     );
@@ -124,7 +72,7 @@ const Clients: React.FC = () => {
         >
           <motion.div
             variants={itemVariants}
-            className="text-center mb-16"
+            className="text-center mb-4"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t('clients.title')}
@@ -140,7 +88,7 @@ const Clients: React.FC = () => {
             ))}
           </div>
 
-          <motion.div
+          {/* <motion.div
             variants={itemVariants}
             className="text-center mt-12"
           >
@@ -150,7 +98,7 @@ const Clients: React.FC = () => {
                 {t('clients.trustedBy')}
               </span>
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </section>
