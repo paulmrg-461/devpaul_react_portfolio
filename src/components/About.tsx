@@ -85,6 +85,13 @@ const About: React.FC = () => {
               variants={itemVariants}
               className="space-y-6"
             >
+              <motion.img
+                src="/capybara.png"
+                alt="DevPaul Capybara"
+                className="w-56 h-56 rounded-full mx-auto mb-8 object-cover border-4 border-white dark:border-gray-800 shadow-xl"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+              />
               <div className="prose prose-lg dark:prose-invert">
                 <p className="text-gray-700 dark:text-gray-300">
                   {t('about.description1')}

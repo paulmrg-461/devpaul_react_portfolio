@@ -5,79 +5,79 @@ const projectData = [
   {
     id: '1',
     slug: 'todoApp',
-    image: 'https://images.pexels.com/photos/7014340/pexels-photo-7014340.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/portfolio/DevPaulToDo.png',
     technologies: ['Flutter', 'N8N', 'Deepseek', 'Vectorial postgres'],
-    liveUrl: 'https://example.com/todo-app',
-    githubUrl: 'https://github.com/devpaul/todo-app',
-    category: 'mobile'
+    liveUrl: 'https://devpaultodo.web.app',
+    githubUrl: 'https://github.com/paulmrg-461/devpaul_todo_app',
+    category: 'fullstack'
   },
   {
     id: '2',
     slug: 'centralAluminios',
-    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/portfolio/CentralAluminios.png',
     technologies: ['React', 'n8n', 'FastAPI', 'Deepseek'],
-    liveUrl: 'https://example.com/central-aluminios',
+    liveUrl: 'https://centraldealuminiosdelvalle.com',
     githubUrl: 'https://github.com/devpaul/central-aluminios',
     category: 'web'
   },
   {
     id: '3',
-    slug: 'diegoLopez',
-    image: 'https://images.pexels.com/photos/318236/pexels-photo-318236.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['Flutter', 'NestJS', 'SocketIO'],
-    liveUrl: 'https://example.com/diego-lopez',
-    githubUrl: 'https://github.com/devpaul/diego-lopez',
-    category: 'mobile'
+    slug: 'modware',
+    image: '/portfolio/ModWareLanding.png',
+    technologies: ['ReactJS'],
+    liveUrl: 'https://modware.lat',
+    githubUrl: 'https://github.com/paulmrg-461/react_modware_landing',
+    category: 'web'
   },
   {
     id: '4',
-    slug: 'cdaPopayan',
-    image: 'https://images.pexels.com/photos/1530423/pexels-photo-1530423.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['Flutter', 'NestJS', 'SocketIO', 'push notifications'],
-    liveUrl: 'https://example.com/cda-popayan',
-    githubUrl: 'https://github.com/devpaul/cda-popayan',
-    category: 'mobile'
-  },
-  {
-    id: '5',
     slug: 'codigoTransito',
-    image: 'https://images.pexels.com/photos/590041/pexels-photo-590041.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/portfolio/TransitoApp.png',
     technologies: ['Flutter', 'N8n', 'OpenAI Fine Tuned'],
     liveUrl: 'https://example.com/codigo-transito',
     githubUrl: 'https://github.com/devpaul/codigo-transito',
     category: 'mobile'
   },
   {
+    id: '5',
+    slug: 'cdaPopayan',
+    image: '/portfolio/CDA.png',
+    technologies: ['Flutter', 'NestJS', 'SocketIO', 'push notifications'],
+    liveUrl: 'https://cda-popayan.web.app',
+    githubUrl: 'https://github.com/paulmrg-461/cda_popayan',
+    category: 'fullstack'
+  },
+  {
     id: '6',
     slug: 'devpaulLoans',
-    image: 'https://images.pexels.com/photos/shopping-cart-on-gray-surface-3739975.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/portfolio/DevPaulLoans.png',
     technologies: ['Flutter', 'Firebase Auth', 'Firestore', 'Cloud Functions', 'Push notifications'],
-    liveUrl: 'https://example.com/devpaul-loans',
-    githubUrl: 'https://github.com/devpaul/devpaul-loans',
-    category: 'mobile'
+    liveUrl: 'https://loansdevpaul.web.app',
+    githubUrl: 'https://github.com/paulmrg-461/loans_devpaul',
+    category: 'fullstack'
   },
   {
     id: '7',
+    slug: 'asistenciaAngular',
+    image: '/portfolio/AttendanceManager.png',
+    technologies: ['Angular', 'Firebase Auth', 'Firestore', 'Cloud Functions', 'Push notifications'],
+    liveUrl: 'https://example.com/asistencia-angular',
+    githubUrl: 'https://github.com/devpaul/asistencia-angular',
+    category: 'web'
+  },
+  {
+    id: '8',
     slug: 'schoolManager',
-    image: 'https://images.pexels.com/photos/7014340/pexels-photo-7014340.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/portfolio/SchoolManager.png',
     technologies: ['Flutter', 'Firebase Auth', 'Firestore', 'Cloud Functions', 'Push notifications'],
     liveUrl: 'https://example.com/school-manager',
     githubUrl: 'https://github.com/devpaul/school-manager',
     category: 'mobile'
   },
   {
-    id: '8',
-    slug: 'deliveries',
-    image: 'https://images.pexels.com/photos/1530423/pexels-photo-1530423.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['Flutter', 'NestJS', 'Hasura'],
-    liveUrl: 'https://example.com/deliveries',
-    githubUrl: 'https://github.com/devpaul/deliveries',
-    category: 'fullstack'
-  },
-  {
     id: '9',
     slug: 'grupoVista',
-    image: 'https://images.pexels.com/photos/318236/pexels-photo-318236.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
     technologies: ['ReactJS', 'Flutter', 'NestJS', 'n8n', 'OpenAI'],
     liveUrl: 'https://example.com/grupo-vista',
     githubUrl: 'https://github.com/devpaul/grupo-vista',
@@ -85,11 +85,29 @@ const projectData = [
   },
   {
     id: '10',
-    slug: 'asistenciaAngular',
-    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-    technologies: ['Angular', 'Firebase Auth', 'Firestore', 'Cloud Functions', 'Push notifications'],
-    liveUrl: 'https://example.com/asistencia-angular',
-    githubUrl: 'https://github.com/devpaul/asistencia-angular',
+    slug: 'deliveries',
+    image: '/portfolio/DeliveryApp.png',
+    technologies: ['Flutter', 'NestJS', 'Hasura'],
+    liveUrl: 'https://example.com/deliveries',
+    githubUrl: 'https://github.com/devpaul/deliveries',
+    category: 'fullstack'
+  },
+  {
+    id: '11',
+    slug: 'diegoLopez',
+    image: 'https://images.pexels.com/photos/318236/pexels-photo-318236.jpeg?auto=compress&cs=tinysrgb&w=600',
+    technologies: ['Flutter', 'NestJS', 'SocketIO'],
+    liveUrl: 'https://example.com/diego-lopez',
+    githubUrl: 'https://github.com/devpaul/diego-lopez',
+    category: 'fullstack'
+  },
+  {
+    id: '12',
+    slug: 'jimmyPortfolioFlutter',
+    image: '/portfolio/Portfolio.png',
+    technologies: ['Flutter'],
+    liveUrl: 'https://lucky-bavarois-f06eb5.netlify.app/',
+    githubUrl: 'https://github.com/paulmrg-461/jimmy_portfolio_flutter',
     category: 'web'
   }
 ];
@@ -192,13 +210,6 @@ export const getClients = (t: (key: string) => string): Client[] => [
     description: t('clients.vista.description'),
     category: t('clients.vista.category')
   },
-  // {
-  //   id: '5',
-  //   name: t('clients.comunix.name'),
-  //   icon: Users,
-  //   description: t('clients.comunix.description'),
-  //   category: t('clients.comunix.category')
-  // },
   {
     id: '5',
     name: t('clients.jirehfarma.name'),
