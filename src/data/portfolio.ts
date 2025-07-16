@@ -112,12 +112,14 @@ export const skills: Skill[] = [
   
   // Tools & Cloud
   { name: 'AWS', level: 75, category: 'tools' },
+  { name: 'Azure', level: 85, category: 'tools' },
   { name: 'Docker', level: 80, category: 'tools' },
   { name: 'Git', level: 90, category: 'tools' },
   { name: 'Firebase', level: 85, category: 'tools' },
   
   // AI & Automation
   { name: 'OpenAI API', level: 85, category: 'design' },
+  { name: 'Web Scraping', level: 85, category: 'design' },
   { name: 'Chatbots', level: 90, category: 'design' },
   { name: 'Automatización', level: 85, category: 'design' },
   { name: 'Machine Learning', level: 75, category: 'design' }
@@ -152,22 +154,22 @@ export const getClients = (t: (key: string) => string): Client[] => [
     description: t('clients.vista.description'),
     category: t('clients.vista.category')
   },
+  // {
+  //   id: '5',
+  //   name: t('clients.comunix.name'),
+  //   icon: Users,
+  //   description: t('clients.comunix.description'),
+  //   category: t('clients.comunix.category')
+  // },
   {
     id: '5',
-    name: t('clients.comunix.name'),
-    icon: Users,
-    description: t('clients.comunix.description'),
-    category: t('clients.comunix.category')
-  },
-  {
-    id: '6',
     name: t('clients.jirehfarma.name'),
     icon: Pill,
     description: t('clients.jirehfarma.description'),
     category: t('clients.jirehfarma.category')
   },
   {
-    id: '7',
+    id: '6',
     name: t('clients.centralAluminios.name'),
     icon: Building2,
     description: t('clients.centralAluminios.description'),
