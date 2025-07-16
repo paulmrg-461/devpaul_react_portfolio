@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Github, Filter } from 'lucide-react';
-import { projects } from '../data/portfolio';
+import { getProjects } from '../data/portfolio';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Portfolio: React.FC = () => {
@@ -16,9 +16,10 @@ const Portfolio: React.FC = () => {
     { id: 'desktop', label: t('portfolio.desktopApps') }
   ];
 
+  const allProjects = getProjects(t);
   const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+    ? allProjects 
+    : allProjects.filter(project => project.category === activeFilter);
 
   const containerVariants = {
     hidden: { opacity: 0 },

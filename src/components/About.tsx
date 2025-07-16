@@ -101,7 +101,7 @@ const About: React.FC = () => {
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                  <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">100+</h4>
+                  <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">50+</h4>
                   <p className="text-gray-600 dark:text-gray-400">{t('about.projectsCompleted')}</p>
                 </div>
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
