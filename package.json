@@ -7,11 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "firebase:login": "firebase login",
+    "firebase:init": "firebase init",
+    "firebase:deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
     "clsx": "^2.1.1",
+    "firebase": "^11.10.0",
     "framer-motion": "^12.23.1",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
