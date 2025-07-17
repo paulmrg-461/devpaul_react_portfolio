@@ -35,7 +35,7 @@ const projectData = [
     image: '/portfolio/TransitoApp.png',
     technologies: ['Flutter', 'N8n', 'OpenAI Fine Tuned'],
     liveUrl: 'https://example.com/codigo-transito',
-    githubUrl: 'https://github.com/devpaul/codigo-transito',
+    githubUrl: 'https://github.com/paulmrg-461/codigo_transito_devpaul',
     category: 'mobile'
   },
   {
@@ -62,7 +62,7 @@ const projectData = [
     image: '/portfolio/AttendanceManager.png',
     technologies: ['Angular', 'Firebase Auth', 'Firestore', 'Cloud Functions', 'Push notifications'],
     liveUrl: 'https://example.com/asistencia-angular',
-    githubUrl: 'https://github.com/devpaul/asistencia-angular',
+    githubUrl: 'https://github.com/paulmrg-461/assistance_manager',
     category: 'web'
   },
   {
@@ -77,10 +77,10 @@ const projectData = [
   {
     id: '9',
     slug: 'grupoVista',
-    image: 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/portfolio/GrupoVista.png',
     technologies: ['ReactJS', 'Flutter', 'NestJS', 'n8n', 'OpenAI'],
-    liveUrl: 'https://example.com/grupo-vista',
-    githubUrl: 'https://github.com/devpaul/grupo-vista',
+    liveUrl: 'https://github.com/paulmrg-461/flutter_vista_app_professionals',
+    githubUrl: 'https://github.com/paulmrg-461/flutter_vista_app',
     category: 'fullstack'
   },
   {
@@ -89,16 +89,16 @@ const projectData = [
     image: '/portfolio/DeliveryApp.png',
     technologies: ['Flutter', 'NestJS', 'Hasura'],
     liveUrl: 'https://example.com/deliveries',
-    githubUrl: 'https://github.com/devpaul/deliveries',
-    category: 'fullstack'
+    githubUrl: 'https://github.com/paulmrg-461/ModEats',
+    category: 'mobile'
   },
   {
     id: '11',
     slug: 'diegoLopez',
-    image: 'https://images.pexels.com/photos/318236/pexels-photo-318236.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/portfolio/EscuelaDiegoLopez.png',
     technologies: ['Flutter', 'NestJS', 'SocketIO'],
     liveUrl: 'https://example.com/diego-lopez',
-    githubUrl: 'https://github.com/devpaul/diego-lopez',
+    githubUrl: 'https://github.com/paulmrg-461/diego_lopez_react',
     category: 'fullstack'
   },
   {
@@ -107,7 +107,7 @@ const projectData = [
     image: '/portfolio/Portfolio.png',
     technologies: ['Flutter'],
     liveUrl: 'https://lucky-bavarois-f06eb5.netlify.app/',
-    githubUrl: 'https://github.com/paulmrg-461/jimmy_portfolio_flutter',
+    githubUrl: 'https://github.com/paulmrg-461/devpaul_portfolio',
     category: 'web'
   }
 ];
