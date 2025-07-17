@@ -97,7 +97,7 @@ const projectData = [
     slug: 'diegoLopez',
     image: '/portfolio/EscuelaDiegoLopez.png',
     technologies: ['Flutter', 'NestJS', 'SocketIO'],
-    liveUrl: 'https://example.com/diego-lopez',
+    liveUrl: 'https://paulmrg-461.github.io/diego_lopez_react',
     githubUrl: 'https://github.com/paulmrg-461/diego_lopez_react',
     category: 'fullstack'
   },
