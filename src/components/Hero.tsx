@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Download, Facebook, Instagram, MessageCircle } from 'lucide-react';
+import { Github, Linkedin, Mail, Download, Facebook, Twitter, Instagram, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero: React.FC = () => {
@@ -9,9 +9,10 @@ const Hero: React.FC = () => {
   const socialLinks = [
     { icon: Github, href: 'https://github.com/paulmrg-461', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/paul-realpe-631b17a6', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:co.devpaul@gmail.com', label: 'Email' },
     { icon: Facebook, href: 'https://www.facebook.com/devpaul.co', label: 'Facebook' },
+    { icon: Twitter, href: 'https://x.com/devpaul_co', label: 'Twitter' },
     { icon: Instagram, href: 'https://www.instagram.com/devpaul_co', label: 'Instagram' },
+    { icon: Mail, href: 'mailto:co.devpaul@gmail.com', label: 'Email' },
     { icon: MessageCircle, href: 'https://wa.me/573043162313', label: 'WhatsApp' }
   ];
 

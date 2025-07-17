@@ -64,7 +64,7 @@ const translations = {
     'project.todoApp.description': 'Aplicación de tareas con IA integrada para gestión inteligente de pendientes.',
     'project.centralAluminios.title': 'Central de Aluminios del Valle Responsive Web page and AI Chatbot',
     'project.centralAluminios.description': 'Página web responsiva y chatbot con IA para atención al cliente.',
-    'project.diegoLopez.title': 'Diego Lopez Driving School - Attendance registration and control Flutter Android/Web App',
+    'project.diegoLopez.title': 'Escuela de Conducción Diego López - App para registro y control de asistencia',
     'project.diegoLopez.description': 'App para registro y control de asistencia en escuela de conducción.',
     'project.cdaPopayan.title': 'CDA Popayan Flutter App to register vehicle checking',
     'project.cdaPopayan.description': 'App para registro de revisiones vehiculares en CDA Popayán.',
@@ -80,6 +80,10 @@ const translations = {
     'project.grupoVista.description': 'App para gestión de citas, chatbot con OpenAI y soporte al cliente.',
     'project.asistenciaAngular.title': 'App para control de asistencia Angular',
     'project.asistenciaAngular.description': 'App con geolocalización y soporte offline para control de asistencia.',
+    'project.modware.title': 'Modware Landing Page',
+    'project.modware.description': 'Landing page para Modware.',
+    'project.jimmyPortfolioFlutter.title': 'Jimmy Portfolio Flutter',
+    'project.jimmyPortfolioFlutter.description': 'Portafolio personal de Jimmy con Flutter.',
     
     // Services Section
     'services.title': 'Mis Servicios',
@@ -227,6 +231,10 @@ const translations = {
     'project.grupoVista.description': 'App for appointment management, OpenAI chatbot and personalized customer support.',
     'project.asistenciaAngular.title': 'Angular Attendance Control App',
     'project.asistenciaAngular.description': 'App with geolocation and offline support for attendance control.',
+    'project.modware.title': 'Modware Landing Page',
+    'project.modware.description': 'Landing page for Modware.',
+    'project.jimmyPortfolioFlutter.title': 'Jimmy Portfolio Flutter App',
+    'project.jimmyPortfolioFlutter.description': 'Flutter app for Jimmy Portfolio.',
     
     // Services Section
     'services.title': 'My Services',
