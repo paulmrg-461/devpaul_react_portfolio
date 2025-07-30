@@ -76,6 +76,15 @@ const projectData = [
   },
   {
     id: '9',
+    slug: 'naturaStay',
+    image: '/portfolio/NaturaStay.png',
+    technologies: ['ReactJS', 'Flutter', 'NestJS', 'n8n', 'DeepSeek'],
+    liveUrl: 'https://cozy-beignet-4b748a.netlify.app',
+    githubUrl: 'https://github.com/paulmrg-461/flutter_vista_app',
+    category: 'fullstack'
+  },
+  {
+    id: '10',
     slug: 'grupoVista',
     image: '/portfolio/GrupoVista.png',
     technologies: ['ReactJS', 'Flutter', 'NestJS', 'n8n', 'OpenAI'],
@@ -84,7 +93,7 @@ const projectData = [
     category: 'fullstack'
   },
   {
-    id: '10',
+    id: '11',
     slug: 'deliveries',
     image: '/portfolio/DeliveryApp.png',
     technologies: ['Flutter', 'NestJS', 'Hasura'],
@@ -93,7 +102,7 @@ const projectData = [
     category: 'mobile'
   },
   {
-    id: '11',
+    id: '12',
     slug: 'diegoLopez',
     image: '/portfolio/EscuelaDiegoLopez.png',
     technologies: ['Flutter', 'NestJS', 'SocketIO'],
@@ -102,12 +111,21 @@ const projectData = [
     category: 'fullstack'
   },
   {
-    id: '12',
+    id: '13',
     slug: 'jimmyPortfolioFlutter',
     image: '/portfolio/Portfolio.png',
     technologies: ['Flutter'],
-    liveUrl: 'https://lucky-bavarois-f06eb5.netlify.app/',
-    githubUrl: 'https://github.com/paulmrg-461/devpaul_portfolio',
+    liveUrl: 'https://jimmy-realpe.web.app',
+    githubUrl: 'https://github.com/paulmrg-461/jimmy_realpe_portfolio',
+    category: 'web'
+  },
+  {
+    id: '14',
+    slug: 'amorEterno',
+    image: '/portfolio/AmorEterno.png',
+    technologies: ['ReactJS'],
+    liveUrl: 'https://fanciful-taiyaki-745ea3.netlify.app',
+    githubUrl: 'https://github.com/paulmrg-461/amor_eterno_react_landing',
     category: 'web'
   }
 ];
