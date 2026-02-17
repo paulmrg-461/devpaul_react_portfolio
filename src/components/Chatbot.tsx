@@ -27,7 +27,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant'; text: string }[]>([]);
   const [loading, setLoading] = useState(false);
 
-  const API_BASE = (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:3001';
+  const API_BASE = (import.meta).env?.VITE_API_BASE_URL || 'http://localhost:3001';
 
   const sendMessage = async () => {
     const text = input.trim();
@@ -48,7 +48,7 @@ const Chatbot: React.FC = () => {
         setMessages(prev => [...prev, { role: 'assistant', text: data?.message || 'El chatbot no está disponible.' }]);
       }
     } catch (e) {
-      setMessages(prev => [...prev, { role: 'assistant', text: 'Error al comunicarse con el servidor.' }]);
+      setMessages(prev => [...prev, { role: 'assistant', text: `Error al comunicarse con el servidor: ${e}` }]);
     } finally {
       setLoading(false);
     }
