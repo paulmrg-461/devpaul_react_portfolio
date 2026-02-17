@@ -1,7 +1,11 @@
 import { Project, Service, Skill, Client } from '../types';
 import { Building2, ShoppingCart, Car, Eye, Pill } from 'lucide-react';
 
-const projectData = [
+type ProjectData = Omit<Project, 'title' | 'description'> & {
+  slug: string;
+};
+
+const projectData: ProjectData[] = [
   {
     id: '1',
     slug: 'todoApp',
