@@ -84,7 +84,7 @@ function renderMarkdown(text: string) {
 }
 
 const Chatbot: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant'; text: string }[]>([]);
@@ -102,7 +102,7 @@ const Chatbot: React.FC = () => {
       const res = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text })
+        body: JSON.stringify({ message: text, lang: language })
       });
       const data = await res.json();
       if (data?.success) {
@@ -171,7 +171,7 @@ const Chatbot: React.FC = () => {
               ))}
               {loading && (
                 <motion.div variants={itemVariants} className="text-sm text-gray-500 dark:text-gray-400">
-                  Pensando...
+                  {t('chat.thinking')}
                 </motion.div>
               )}
             </div>

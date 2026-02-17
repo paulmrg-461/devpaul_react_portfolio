@@ -39,6 +39,7 @@ const translations = {
     'hero.chatIntro': 'Pregúntame sobre proyectos, tecnologías, experiencia y si puedo ayudarte con tu idea.',
     'chat.inputPlaceholder': 'Escribe tu mensaje...',
     'chat.send': 'Enviar',
+    'chat.thinking': 'Pensando...',
     
     // About Section
     'about.title': 'Sobre Mí',
@@ -200,6 +201,7 @@ const translations = {
     'hero.chatIntro': 'Ask me about projects, technologies, experience, or how I can help with your idea.',
     'chat.inputPlaceholder': 'Type your message...',
     'chat.send': 'Send',
+    'chat.thinking': 'Thinking...',
     
     // About Section
     'about.title': 'About Me',
