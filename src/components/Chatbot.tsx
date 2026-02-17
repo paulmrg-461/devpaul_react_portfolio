@@ -146,7 +146,7 @@ const Chatbot: React.FC = () => {
             <div className="p-4 h-96 overflow-y-auto space-y-4">
               {messages.length === 0 && (
                 <motion.div variants={itemVariants} className="text-sm text-gray-600 dark:text-gray-300">
-                  Pregúntame sobre proyectos, tecnologías, experiencia y si puedo ayudarte con tu idea.
+                  {t('hero.chatIntro') || 'Pregúntame sobre proyectos, tecnologías, experiencia y si puedo ayudarte con tu idea.'}
                 </motion.div>
               )}
               {messages.map((m, idx) => (

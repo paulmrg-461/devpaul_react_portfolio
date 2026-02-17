@@ -36,6 +36,7 @@ const translations = {
     'hero.getInTouch': 'Contáctame',
     'hero.downloadCV': 'Descargar CV',
     'hero.chatTitle': 'DevPaul Bot',
+    'hero.chatIntro': 'Pregúntame sobre proyectos, tecnologías, experiencia y si puedo ayudarte con tu idea.',
     
     // About Section
     'about.title': 'Sobre Mí',
@@ -194,6 +195,7 @@ const translations = {
     'hero.getInTouch': 'Get In Touch',
     'hero.downloadCV': 'Download CV',
     'hero.chatTitle': 'DevPaul Bot',
+    'hero.chatIntro': 'Ask me about projects, technologies, experience, or how I can help with your idea.',
     
     // About Section
     'about.title': 'About Me',
