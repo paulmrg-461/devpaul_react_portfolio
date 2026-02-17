@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
           message: result.message
         });
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: 'error',
         message: t('contact.errorSending')

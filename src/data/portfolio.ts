@@ -1,5 +1,5 @@
 import { Project, Service, Skill, Client } from '../types';
-import { Building2, ShoppingCart, Car, Eye, Users, Pill } from 'lucide-react';
+import { Building2, ShoppingCart, Car, Eye, Pill } from 'lucide-react';
 
 const projectData = [
   {
