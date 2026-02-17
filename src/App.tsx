@@ -13,6 +13,7 @@ import Services from './components/Services';
 import Clients from './components/Clients';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                 </Suspense>
               </main>
               <Footer />
+              <Chatbot />
             </div>
           </ErrorBoundary>
         </ThemeProvider>

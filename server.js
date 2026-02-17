@@ -2,9 +2,11 @@
 import express from 'express';
 import cors from 'cors';
 import nodemailer from 'nodemailer';
+import { GoogleGenAI } from '@google/genai';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs';
 
 // Configurar __dirname para ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -19,6 +21,7 @@ console.log('SMTP Host:', process.env.VITE_MAILEROO_SMTP_HOST);
 console.log('SMTP Port:', process.env.VITE_MAILEROO_SMTP_PORT);
 console.log('Email:', process.env.VITE_MAILEROO_EMAIL);
 console.log('Sending Key disponible:', !!process.env.VITE_MAILEROO_SENDING_KEY);
+console.log('Gemini API Key disponible:', !!process.env.GEMINI_API_KEY);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -26,6 +29,93 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// ====== Gemini File Search Chat ======
+const GEMINI_MODEL = 'gemini-3-flash-preview';
+const FILE_SEARCH_STORE_NAME = 'fileSearchStores/devpaul-portfolio-store';
+
+function getAIClient() {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) return null;
+  return new GoogleGenAI({ apiKey });
+}
+
+async function ensureStoreAndDocument(ai) {
+  try {
+    const stores = [];
+    for await (const s of ai.fileSearchStores.list()) {
+      stores.push(s);
+    }
+    const existing = stores.find(s => s.name === FILE_SEARCH_STORE_NAME);
+    const store = existing || await ai.fileSearchStores.create({ config: { displayName: 'devpaul-portfolio-store' } });
+
+    const portfolioPath = path.join(__dirname, 'src', 'data', 'portfolio.ts');
+    const docFile = path.join(__dirname, 'devpaul_portfolio_source.ts');
+
+    if (fs.existsSync(portfolioPath)) {
+      fs.copyFileSync(portfolioPath, docFile);
+    } else {
+      fs.writeFileSync(docFile, `
+// DevPaul Portfolio Source
+// Fallback document when src/data/portfolio.ts is not found.
+// Include summary about projects, skills, and clients here.
+      `.trim());
+    }
+
+    let op = await ai.fileSearchStores.uploadToFileSearchStore({
+      file: docFile,
+      fileSearchStoreName: store.name,
+      config: { displayName: 'devpaul_portfolio_source.ts' }
+    });
+
+    while (!op.done) {
+      await new Promise(r => setTimeout(r, 1500));
+      op = await ai.operations.get({ operation: op });
+    }
+
+    return store;
+  } catch (e) {
+    console.error('Error preparando File Search Store:', e);
+    throw e;
+  }
+}
+
+app.post('/api/chat', async (req, res) => {
+  try {
+    const { message } = req.body || {};
+    if (!message || typeof message !== 'string') {
+      return res.status(400).json({ success: false, message: 'Mensaje requerido' });
+    }
+
+    const ai = getAIClient();
+    if (!ai) {
+      return res.status(501).json({
+        success: false,
+        message: 'Configura GEMINI_API_KEY en .env.local para habilitar el chatbot'
+      });
+    }
+
+    const store = await ensureStoreAndDocument(ai);
+
+    const response = await ai.models.generateContent({
+      model: GEMINI_MODEL,
+      contents: message,
+      config: {
+        tools: [
+          {
+            fileSearch: { fileSearchStoreNames: [store.name] }
+          }
+        ]
+      }
+    });
+
+    const text = response?.text || '';
+    return res.json({ success: true, reply: text });
+  } catch (error) {
+    console.error('Error en /api/chat:', error);
+    return res.status(500).json({ success: false, message: 'Error interno del servidor en chat' });
+  }
+});
 
 // Endpoint para enviar correos
 app.post('/api/send-email', async (req, res) => {
