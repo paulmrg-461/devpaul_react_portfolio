@@ -84,6 +84,10 @@ const translations = {
     'project.modware.description': 'Landing page para Modware.',
     'project.jimmyPortfolioFlutter.title': 'Jimmy Portfolio Flutter',
     'project.jimmyPortfolioFlutter.description': 'Portafolio personal de Jimmy con Flutter.',
+    'project.amorEterno.title': 'Amor Eterno Landing Page',
+    'project.amorEterno.description': 'Landing page para Amor Eterno, arreglos textiles.',
+    'project.naturaStay.title': 'NaturaStay Web App',
+    'project.naturaStay.description': 'Web App para gestión de reservas en Natura Stay. Incluye sistema de reservas, chatbot con IA y soporte al cliente.',
     
     // Services Section
     'services.title': 'Mis Servicios',
@@ -164,6 +168,8 @@ const translations = {
     'contact.subjectPlaceholder': 'Discusión de proyecto',
     'contact.messagePlaceholder': 'Cuéntame sobre tu proyecto...',
     'contact.thankYou': '¡Gracias por tu mensaje! Te responderé pronto.',
+    'contact.sending': 'Enviando...',
+    'contact.errorSending': 'Error al enviar el mensaje. Por favor, inténtalo de nuevo.',
     
     // Footer
     'footer.madeWith': 'Hecho con',
@@ -235,6 +241,10 @@ const translations = {
     'project.modware.description': 'Landing page for Modware.',
     'project.jimmyPortfolioFlutter.title': 'Jimmy Portfolio Flutter App',
     'project.jimmyPortfolioFlutter.description': 'Flutter app for Jimmy Portfolio.',
+    'project.amorEterno.title': 'Amor Eterno Landing Page',
+    'project.amorEterno.description': 'Landing page for Amor Eterno, arrangements of textiles.',
+    'project.naturaStay.title': 'NaturaStay Web App',
+    'project.naturaStay.description': 'Web App for gesture of reservations in Natura Stay. Includes reservation system, chatbot with IA and customer support.',
     
     // Services Section
     'services.title': 'My Services',
@@ -315,6 +325,8 @@ const translations = {
     'contact.subjectPlaceholder': 'Project discussion',
     'contact.messagePlaceholder': 'Tell me about your project...',
     'contact.thankYou': 'Thank you for your message! I will get back to you soon.',
+    'contact.sending': 'Sending...',
+    'contact.errorSending': 'Error sending message. Please try again.',
     
     // Footer
     'footer.madeWith': 'Made with',

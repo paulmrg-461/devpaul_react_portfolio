@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { ContactFormData } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
+import { sendEmail } from '../utils/emailService';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error' | null;
+    message: string;
+  }>({ type: null, message: '' });
   
   const {
     register,
@@ -16,11 +22,32 @@ const Contact: React.FC = () => {
   } = useForm<ContactFormData>();
 
   const onSubmit = async (data: ContactFormData) => {
-    // Handle form submission here
-    console.log('Form submitted:', data);
-    // You can integrate with your preferred form handling service
-    alert(t('contact.thankYou'));
-    reset();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: '' });
+    
+    try {
+      const result = await sendEmail(data);
+      
+      if (result.success) {
+        setSubmitStatus({
+          type: 'success',
+          message: t('contact.thankYou')
+        });
+        reset();
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: result.message
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: t('contact.errorSending')
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -196,14 +223,48 @@ const Contact: React.FC = () => {
                   )}
                 </div>
 
+                {/* Status Message */}
+                {submitStatus.type && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-4 rounded-lg flex items-center space-x-2 ${
+                      submitStatus.type === 'success'
+                        ? 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
+                        : 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
+                    }`}
+                  >
+                    {submitStatus.type === 'success' ? (
+                      <CheckCircle size={20} />
+                    ) : (
+                      <AlertCircle size={20} />
+                    )}
+                    <span>{submitStatus.message}</span>
+                  </motion.div>
+                )}
+
                 <motion.button
                   type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
+                  disabled={isSubmitting}
+                  className={`w-full px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
+                    isSubmitting
+                      ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed'
+                      : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-lg'
+                  } text-white`}
+                  whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                  whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                 >
-                  <Send size={20} />
-                  <span>{t('contact.sendMessage')}</span>
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                      <span>{t('contact.sending')}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      <span>{t('contact.sendMessage')}</span>
+                    </>
+                  )}
                 </motion.button>
               </form>
             </motion.div>
