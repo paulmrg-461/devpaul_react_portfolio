@@ -47,8 +47,8 @@ app.post('/api/send-email', async (req, res) => {
       port: parseInt(process.env.VITE_MAILEROO_SMTP_PORT || '587'),
       secure: false, // false para puerto 587 (STARTTLS)
       auth: {
-        user: process.env.VITE_MAILEROO_EMAIL || 'info@devpaul.pro', // Usar correo electrónico completo
-        pass: process.env.VITE_MAILEROO_SENDING_KEY.trim() // Asegurarse de que no haya espacios
+        user: process.env.VITE_MAILEROO_EMAIL || 'info@devpaul.pro',
+        pass: (process.env.VITE_MAILEROO_API_KEY || '').trim()
       },
       tls: {
         rejectUnauthorized: false // Permitir certificados autofirmados
@@ -113,16 +113,23 @@ app.post('/api/send-email', async (req, res) => {
     // Enviar el correo
     await transporter.sendMail(mailOptions);
 
-    res.status(200).json({ 
-      success: true, 
-      message: 'Correo enviado exitosamente' 
+    res.status(200).json({
+      success: true,
+      message: 'Correo enviado exitosamente'
     });
 
   } catch (error) {
     console.error('Error al enviar correo:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Error interno del servidor al enviar el correo' 
+
+    const isDev = process.env.NODE_ENV !== 'production';
+    const errorMessage =
+      isDev && error instanceof Error
+        ? `Error al enviar correo: ${error.message}`
+        : 'Error interno del servidor al enviar el correo';
+
+    res.status(500).json({
+      success: false,
+      message: errorMessage
     });
   }
 });

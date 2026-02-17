@@ -116,7 +116,7 @@ const Hero: React.FC = () => {
             <motion.button
               onClick={() => {
                 const link = document.createElement('a');
-                link.href = 'https://drive.google.com/uc?export=download&id=121oSrMUgK6HPwYKGc-UKcViHSQJ1s9WQ';
+                link.href = 'https://drive.google.com/uc?export=download&id=1W5wdlFCmh-RcZNLND44Oq_7q6ACwN_lZ';
                 link.setAttribute('download', 'Paul_Realpe_CV.pdf');
                 document.body.appendChild(link);
                 link.click();
