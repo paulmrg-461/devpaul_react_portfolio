@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import type { LucideIcon } from 'lucide-react';
 
 export interface Project {
   id: string;
@@ -40,7 +40,7 @@ export interface ThemeContextType {
 export interface Client {
   id: string;
   name: string;
-  icon: ComponentType<unknown>;
+  icon: LucideIcon;
   description: string;
   category: string;
 }
