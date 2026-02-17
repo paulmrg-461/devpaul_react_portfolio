@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { MessageCircle, Send } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -89,8 +89,16 @@ const Chatbot: React.FC = () => {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant'; text: string }[]>([]);
   const [loading, setLoading] = useState(false);
+  const messagesContainerRef = useRef<HTMLDivElement | null>(null);
 
   const API_BASE = (import.meta).env?.VITE_API_BASE_URL || 'http://localhost:3001';
+
+  useEffect(() => {
+    const el = messagesContainerRef.current;
+    if (el) {
+      el.scrollTop = el.scrollHeight;
+    }
+  }, [messages, loading]);
 
   const sendMessage = async () => {
     const text = input.trim();
@@ -145,7 +153,7 @@ const Chatbot: React.FC = () => {
               <button onClick={() => setOpen(false)} className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300">✕</button>
             </div>
 
-            <div className="p-4 h-96 overflow-y-auto space-y-4">
+            <div className="p-4 h-96 overflow-y-auto space-y-4" ref={messagesContainerRef}>
               {messages.length === 0 && (
                 <motion.div variants={itemVariants} className="text-sm text-gray-600 dark:text-gray-300">
                   {t('hero.chatIntro') || 'Pregúntame sobre proyectos, tecnologías, experiencia y si puedo ayudarte con tu idea.'}
@@ -171,7 +179,7 @@ const Chatbot: React.FC = () => {
               ))}
               {loading && (
                 <motion.div variants={itemVariants} className="text-sm text-gray-500 dark:text-gray-400">
-                  {t('chat.thinking')}
+                  {t('chat.thinking') || 'Pensando...'}
                 </motion.div>
               )}
             </div>
