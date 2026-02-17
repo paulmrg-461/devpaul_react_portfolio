@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { ContactFormData } from '../types';
@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
           message: result.message
         });
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: 'error',
         message: t('contact.errorSending')
@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
     }
   };
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -61,13 +61,13 @@ const Contact: React.FC = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 50, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 100,
         damping: 10
       }

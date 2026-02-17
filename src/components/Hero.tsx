@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Github, Linkedin, Mail, Download, Facebook, Twitter, Instagram, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -16,7 +16,7 @@ const Hero: React.FC = () => {
     { icon: MessageCircle, href: 'https://wa.me/573043162313', label: 'WhatsApp' }
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 50, opacity: 0 },
     visible: {
       y: 0,
@@ -116,7 +116,7 @@ const Hero: React.FC = () => {
             <motion.button
               onClick={() => {
                 const link = document.createElement('a');
-                link.href = 'https://drive.google.com/uc?export=download&id=121oSrMUgK6HPwYKGc-UKcViHSQJ1s9WQ';
+                link.href = 'https://drive.google.com/uc?export=download&id=1W5wdlFCmh-RcZNLND44Oq_7q6ACwN_lZ';
                 link.setAttribute('download', 'Paul_Realpe_CV.pdf');
                 document.body.appendChild(link);
                 link.click();

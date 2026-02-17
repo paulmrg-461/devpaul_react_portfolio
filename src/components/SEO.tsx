@@ -10,14 +10,14 @@ interface SEOProps {
   url?: string;
 }
 
-const SEO: React.FC<SEOProps> = ({
+export default function SEO({
   title = 'DevPaul - Full-Stack Developer',
   description = 'Professional full-stack developer and UI/UX designer creating beautiful, functional, and user-friendly digital experiences. Specializing in React, Node.js, and modern web technologies.',
   keywords = 'Paul Realpe, DevPaul, Full-Stack Developer, UI/UX Designer, React, Node.js, JavaScript, TypeScript, Web Development, Mobile Development',
   author = 'Paul Realpe',
   image = '/og-image.jpg',
   url = 'https://co.devpaul.com'
-}) => {
+}: SEOProps) {
   return (
     <Helmet>
       <title>{title}</title>
@@ -51,6 +51,4 @@ const SEO: React.FC<SEOProps> = ({
       <link rel="manifest" href="/manifest.json" />
     </Helmet>
   );
-};
-
-export default SEO;
+}

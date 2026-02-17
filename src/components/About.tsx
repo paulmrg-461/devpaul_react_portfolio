@@ -1,12 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { skills } from '../data/portfolio';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const About: React.FC = () => {
   const { t } = useLanguage();
   
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -17,13 +17,13 @@ const About: React.FC = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 50, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 100,
         damping: 10
       }
@@ -112,7 +112,7 @@ const About: React.FC = () => {
                   <p className="text-gray-600 dark:text-gray-400">{t('about.projectsCompleted')}</p>
                 </div>
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
-                  <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">5+</h4>
+                  <h4 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">7+</h4>
                   <p className="text-gray-600 dark:text-gray-400">{t('about.yearsExperience')}</p>
                 </div>
               </div>

@@ -90,6 +90,8 @@ VITE_FIREBASE_MEASUREMENT_ID=tu-measurement-id
 ```bash
 # Iniciar servidor de desarrollo
 npm run dev
+# Opción recomendable: backend + frontend juntos
+npm run dev:full
 ```
 
 Esto lanzará la aplicación en modo desarrollo en [http://localhost:5173](http://localhost:5173).

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 import { ExternalLink, Github, Filter } from 'lucide-react';
 import { getProjects } from '../data/portfolio';
 import { useLanguage } from '../contexts/LanguageContext';
+import type { Project } from '../types';
 
 const Portfolio: React.FC = () => {
   const { t } = useLanguage();
@@ -21,7 +22,7 @@ const Portfolio: React.FC = () => {
     ? allProjects 
     : allProjects.filter(project => project.category === activeFilter);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -32,22 +33,22 @@ const Portfolio: React.FC = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 50, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: 'spring',
+        type: 'spring' as const,
         stiffness: 100,
         damping: 10
       }
     }
   };
 
-  const ProjectCard: React.FC<{ project: typeof projects[0] }> = ({ project }) => (
+  const ProjectCard: React.FC<{ project: Project }> = ({ project }) => (
     <motion.div
-      variants={itemVariants}
+      variants={itemVariants as Variants}
       layout
       className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden group"
       whileHover={{ y: -5 }}

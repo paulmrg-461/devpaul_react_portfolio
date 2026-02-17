@@ -1,3 +1,5 @@
+import type { LucideIcon } from 'lucide-react';
+
 export interface Project {
   id: string;
   title: string;
@@ -38,7 +40,7 @@ export interface ThemeContextType {
 export interface Client {
   id: string;
   name: string;
-  icon: any;
+  icon: LucideIcon;
   description: string;
   category: string;
 }

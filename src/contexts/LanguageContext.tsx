@@ -38,8 +38,8 @@ const translations = {
     
     // About Section
     'about.title': 'Sobre Mí',
-    'about.subtitle': 'Desarrollador apasionado con más de 5 años de experiencia creando soluciones digitales innovadoras',
-    'about.description1': 'Soy un desarrollador full-stack apasionado con más de 5 años de experiencia creando soluciones digitales innovadoras y funcionales. Mi experiencia abarca desde desarrollo web y móvil hasta aplicaciones de escritorio y sistemas empresariales complejos.',
+    'about.subtitle': 'Desarrollador apasionado con más de 7 años de experiencia creando soluciones digitales innovadoras',
+    'about.description1': 'Soy un desarrollador full-stack apasionado con más de 7 años de experiencia creando soluciones digitales innovadoras y funcionales. Mi experiencia abarca desde desarrollo web y móvil hasta aplicaciones de escritorio y sistemas empresariales complejos.',
     'about.description2': 'Me especializo en tecnologías modernas como Flutter, React, Angular, Vue, Svelte, Python y Node.js. Mi enfoque combina experiencia técnica con resolución creativa de problemas para entregar soluciones que no solo funcionan perfectamente, sino que también brindan experiencias excepcionales.',
     'about.description3': 'Ofrezco soluciones completas de software incluyendo aplicaciones web, móviles, de escritorio, sistemas CRM, facturación electrónica, automatizaciones con IA y chatbots inteligentes.',
     'about.projectsCompleted': 'Proyectos Completados',
@@ -195,8 +195,8 @@ const translations = {
     
     // About Section
     'about.title': 'About Me',
-    'about.subtitle': 'Passionate developer with 5+ years of experience creating innovative digital solutions',
-    'about.description1': 'I am a passionate full-stack developer with over 5 years of experience creating innovative and functional digital solutions. My experience spans from web and mobile development to desktop applications and complex enterprise systems.',
+    'about.subtitle': 'Passionate developer with 7+ years of experience creating innovative digital solutions',
+    'about.description1': 'I am a passionate full-stack developer with over 7 years of experience creating innovative and functional digital solutions. My experience spans from web and mobile development to desktop applications and complex enterprise systems.',
     'about.description2': 'I specialize in modern technologies like Flutter, React, Angular, Vue, Svelte, Python and Node.js. My approach combines technical expertise with creative problem-solving to deliver solutions that not only work perfectly but also provide exceptional experiences.',
     'about.description3': 'I offer complete software solutions including web, mobile, desktop applications, CRM systems, electronic invoicing, AI automations and intelligent chatbots.',
     'about.projectsCompleted': 'Projects Completed',
