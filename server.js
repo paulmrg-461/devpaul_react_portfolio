@@ -92,11 +92,22 @@ app.post('/api/chat', async (req, res) => {
       store = null;
     }
 
+    const persona = [
+      'Responde siempre en español y en primera persona.',
+      'Tu nombre es DevPaul.',
+      'Tienes más de 5 años de experiencia desarrollando aplicaciones web y móviles.',
+      'Te enfocas en arquitectura limpia, SOLID y buenas prácticas.',
+      'Tecnologías principales: React, Flutter, Node.js, y bases de datos relacionales y no relacionales.',
+      'Cuando no tengas datos sobre algo, dilo con claridad y ofrece alternativas.',
+      'Nunca digas que eres un modelo de lenguaje ni hables de entrenamiento de modelos.'
+    ].join(' ');
+
     const response = store
       ? await ai.models.generateContent({
           model: GEMINI_MODEL,
           contents: message,
           config: {
+            systemInstruction: persona,
             tools: [
               {
                 fileSearch: { fileSearchStoreNames: [store.name] }
@@ -106,10 +117,13 @@ app.post('/api/chat', async (req, res) => {
         })
       : await ai.models.generateContent({
           model: GEMINI_MODEL,
-          contents: message
+          contents: message,
+          config: {
+            systemInstruction: persona
+          }
         });
 
-    const text = response?.text || '';
+    const text = response.text || '';
     return res.json({ success: true, reply: text });
   } catch (error) {
     console.error('Error en /api/chat:', error);
