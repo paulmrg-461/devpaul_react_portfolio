@@ -27,6 +27,8 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<{ role: 'user' | 'assistant'; text: string }[]>([]);
   const [loading, setLoading] = useState(false);
 
+  const API_BASE = (import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:3001';
+
   const sendMessage = async () => {
     const text = input.trim();
     if (!text) return;
@@ -34,7 +36,7 @@ const Chatbot: React.FC = () => {
     setInput('');
     setLoading(true);
     try {
-      const res = await fetch('/api/chat', {
+      const res = await fetch(`${API_BASE}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text })

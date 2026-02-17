@@ -42,30 +42,20 @@ function getAIClient() {
 
 async function ensureStoreAndDocument(ai) {
   try {
-    const stores = [];
-    for await (const s of ai.fileSearchStores.list()) {
-      stores.push(s);
-    }
-    const existing = stores.find(s => s.name === FILE_SEARCH_STORE_NAME);
-    const store = existing || await ai.fileSearchStores.create({ config: { displayName: 'devpaul-portfolio-store' } });
+    const store = await ai.fileSearchStores.create({ config: { displayName: 'devpaul-portfolio-store' } });
 
     const portfolioPath = path.join(__dirname, 'src', 'data', 'portfolio.ts');
-    const docFile = path.join(__dirname, 'devpaul_portfolio_source.ts');
+    const docFile = path.join(__dirname, 'devpaul-portfolio-source.txt');
 
-    if (fs.existsSync(portfolioPath)) {
-      fs.copyFileSync(portfolioPath, docFile);
-    } else {
-      fs.writeFileSync(docFile, `
-// DevPaul Portfolio Source
-// Fallback document when src/data/portfolio.ts is not found.
-// Include summary about projects, skills, and clients here.
-      `.trim());
-    }
+    const content = fs.existsSync(portfolioPath)
+      ? fs.readFileSync(portfolioPath, 'utf8')
+      : `devpaul portfolio source\nprojects, skills, clients, and experience overview.`;
+    fs.writeFileSync(docFile, content);
 
     let op = await ai.fileSearchStores.uploadToFileSearchStore({
       file: docFile,
       fileSearchStoreName: store.name,
-      config: { displayName: 'devpaul_portfolio_source.ts' }
+      config: { displayName: 'devpaul-portfolio-source' }
     });
 
     while (!op.done) {
@@ -95,19 +85,29 @@ app.post('/api/chat', async (req, res) => {
       });
     }
 
-    const store = await ensureStoreAndDocument(ai);
+    let store = null;
+    try {
+      store = await ensureStoreAndDocument(ai);
+    } catch (_e) {
+      store = null;
+    }
 
-    const response = await ai.models.generateContent({
-      model: GEMINI_MODEL,
-      contents: message,
-      config: {
-        tools: [
-          {
-            fileSearch: { fileSearchStoreNames: [store.name] }
+    const response = store
+      ? await ai.models.generateContent({
+          model: GEMINI_MODEL,
+          contents: message,
+          config: {
+            tools: [
+              {
+                fileSearch: { fileSearchStoreNames: [store.name] }
+              }
+            ]
           }
-        ]
-      }
-    });
+        })
+      : await ai.models.generateContent({
+          model: GEMINI_MODEL,
+          contents: message
+        });
 
     const text = response?.text || '';
     return res.json({ success: true, reply: text });
