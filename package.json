@@ -15,6 +15,7 @@
     "firebase:deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
+    "@google/genai": "^1.41.0",
     "@hookform/resolvers": "^5.1.1",
     "clsx": "^2.1.1",
     "cors": "^2.8.5",
