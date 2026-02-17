@@ -119,13 +119,15 @@ const Chatbot: React.FC = () => {
 
   return (
     <>
-      <button
+      <motion.button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 p-4 rounded-full bg-blue-600 text-white shadow-lg hover:bg-blue-700 transition"
+        className="fixed bottom-6 right-6 p-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+        whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(59, 130, 246, 0.4)' }}
+        whileTap={{ scale: 0.95 }}
         aria-label="Abrir chatbot"
       >
         <MessageCircle size={24} />
-      </button>
+      </motion.button>
 
       {open && (
         <div className="fixed inset-0 bg-black/40 flex items-end sm:items-center justify-center z-50">
@@ -184,16 +186,18 @@ const Chatbot: React.FC = () => {
                     sendMessage();
                   }
                 }}
-                placeholder="Escribe tu mensaje..."
+                placeholder={t('chat.inputPlaceholder') || 'Escribe tu mensaje...'}
                 className="flex-1 px-3 py-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 outline-none"
               />
-              <button
+              <motion.button
                 onClick={sendMessage}
-                className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition flex items-center gap-2"
+                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 flex items-center gap-2"
+                whileHover={{ scale: 1.03, boxShadow: '0 8px 24px rgba(59, 130, 246, 0.35)' }}
+                whileTap={{ scale: 0.97 }}
               >
                 <Send size={18} />
-                Enviar
-              </button>
+                {t('chat.send') || 'Enviar'}
+              </motion.button>
             </div>
           </motion.div>
         </div>
