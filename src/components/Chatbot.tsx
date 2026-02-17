@@ -91,7 +91,8 @@ const Chatbot: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const messagesContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const API_BASE = (import.meta).env?.VITE_API_BASE_URL || 'http://localhost:3001';
+  const isProd = (import.meta as any).env?.MODE === 'production';
+  const API_BASE = isProd ? '' : ((import.meta as any).env?.VITE_API_BASE_URL || 'http://localhost:3001');
 
   useEffect(() => {
     const el = messagesContainerRef.current;

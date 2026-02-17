@@ -33,6 +33,7 @@ app.use(express.json());
 // ====== Gemini File Search Chat ======
 const GEMINI_MODEL = 'gemini-3-flash-preview';
 const FILE_SEARCH_STORE_NAME = 'fileSearchStores/devpaul-portfolio-store';
+let cachedStoreName = null;
 
 function getAIClient() {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -42,6 +43,11 @@ function getAIClient() {
 
 async function ensureStoreAndDocument(ai) {
   try {
+    if (cachedStoreName) {
+      console.log('Reusando File Search Store en memoria:', cachedStoreName);
+      return { name: cachedStoreName };
+    }
+
     const store = await ai.fileSearchStores.create({ config: { displayName: 'devpaul-portfolio-store' } });
 
     const portfolioPath = path.join(__dirname, 'src', 'data', 'portfolio.ts');
@@ -62,6 +68,9 @@ async function ensureStoreAndDocument(ai) {
       await new Promise(r => setTimeout(r, 1500));
       op = await ai.operations.get({ operation: op });
     }
+
+    cachedStoreName = store.name;
+    console.log('File Search Store creado y cacheado:', cachedStoreName);
 
     return store;
   } catch (e) {
