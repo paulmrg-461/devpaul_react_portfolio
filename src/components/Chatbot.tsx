@@ -20,6 +20,69 @@ const itemVariants: Variants = {
   }
 };
 
+function renderInlineMarkdown(text: string) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, index) => {
+    const match = part.match(/^\*\*(.+)\*\*$/);
+    if (match) {
+      return (
+        <strong key={index} className="font-semibold">
+          {match[1]}
+        </strong>
+      );
+    }
+    return <React.Fragment key={index}>{part}</React.Fragment>;
+  });
+}
+
+function renderMarkdown(text: string) {
+  const blocks = text.split(/\n{2,}/);
+
+  return blocks.map((block, index) => {
+    const trimmed = block.trim();
+    if (!trimmed) return null;
+
+    if (trimmed.startsWith('### ')) {
+      const content = trimmed.slice(4);
+      return (
+        <h3 key={index} className="font-semibold text-sm mb-1">
+          {renderInlineMarkdown(content)}
+        </h3>
+      );
+    }
+
+    if (trimmed.startsWith('## ')) {
+      const content = trimmed.slice(3);
+      return (
+        <h2 key={index} className="font-semibold text-sm mb-1">
+          {renderInlineMarkdown(content)}
+        </h2>
+      );
+    }
+
+    if (trimmed.startsWith('# ')) {
+      const content = trimmed.slice(2);
+      return (
+        <h1 key={index} className="font-semibold text-sm mb-1">
+          {renderInlineMarkdown(content)}
+        </h1>
+      );
+    }
+
+    const lines = trimmed.split('\n');
+    return (
+      <p key={index} className="text-sm leading-relaxed mb-1">
+        {lines.map((line, lineIndex) => (
+          <React.Fragment key={lineIndex}>
+            {renderInlineMarkdown(line)}
+            {lineIndex < lines.length - 1 && <br />}
+          </React.Fragment>
+        ))}
+      </p>
+    );
+  });
+}
+
 const Chatbot: React.FC = () => {
   const { t } = useLanguage();
   const [open, setOpen] = useState(false);
@@ -90,17 +153,17 @@ const Chatbot: React.FC = () => {
                 <motion.div
                   key={idx}
                   variants={itemVariants}
-                  className={m.role === 'user' ? 'text-right' : 'text-left'}
+                  className={m.role === 'user' ? 'flex justify-end' : 'flex justify-start'}
                 >
                   <div
                     className={
-                      'inline-block px-3 py-2 rounded-lg ' +
+                      'inline-block max-w-[80%] px-3 py-2 text-sm ' +
                       (m.role === 'user'
-                        ? 'bg-blue-600 text-white'
-                        : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200')
+                        ? 'bg-blue-600 text-white rounded-2xl rounded-br-none ml-10'
+                        : 'bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-2xl rounded-bl-none mr-10')
                     }
                   >
-                    {m.text}
+                    {m.role === 'assistant' ? renderMarkdown(m.text) : m.text}
                   </div>
                 </motion.div>
               ))}

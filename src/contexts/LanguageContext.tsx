@@ -35,6 +35,7 @@ const translations = {
     'hero.description': 'Especializado en desarrollo multiplataforma y soluciones de software personalizadas. Creo aplicaciones web, móviles y de escritorio, sistemas CRM, facturación electrónica, automatizaciones con IA y chatbots inteligentes.',
     'hero.getInTouch': 'Contáctame',
     'hero.downloadCV': 'Descargar CV',
+    'hero.chatTitle': 'DevPaul Bot',
     
     // About Section
     'about.title': 'Sobre Mí',
@@ -192,6 +193,7 @@ const translations = {
     'hero.description': 'Specialized in cross-platform development and custom software solutions. I create web, mobile and desktop applications, CRM systems, electronic invoicing, AI automations and intelligent chatbots.',
     'hero.getInTouch': 'Get In Touch',
     'hero.downloadCV': 'Download CV',
+    'hero.chatTitle': 'DevPaul Bot',
     
     // About Section
     'about.title': 'About Me',
