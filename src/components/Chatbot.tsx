@@ -119,8 +119,8 @@ const Chatbot: React.FC = () => {
       } else {
         setMessages(prev => [...prev, { role: 'assistant', text: data?.message || 'El chatbot no está disponible.' }]);
       }
-    } catch (e) {
-      setMessages(prev => [...prev, { role: 'assistant', text: `Error al comunicarse con el servidor: ${e}` }]);
+    } catch {
+      setMessages(prev => [...prev, { role: 'assistant', text: 'Error al comunicarse con el chatbot. Intenta de nuevo.' }]);
     } finally {
       setLoading(false);
     }

@@ -179,7 +179,7 @@ const translations = {
     // Footer
     'footer.madeWith': 'Hecho con',
     'footer.by': 'por Paul Realpe',
-    'footer.rights': '© 2024 DevPaul. Todos los derechos reservados.'
+    'footer.rights': `© ${new Date().getFullYear()} DevPaul. Todos los derechos reservados.`
   },
   en: {
     // Navigation
@@ -341,7 +341,7 @@ const translations = {
     // Footer
     'footer.madeWith': 'Made with',
     'footer.by': 'by Paul Realpe',
-    'footer.rights': '© 2024 DevPaul. All rights reserved.'
+    'footer.rights': `© ${new Date().getFullYear()} DevPaul. All rights reserved.`
   }
 };
 

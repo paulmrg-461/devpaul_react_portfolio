@@ -1,0 +1,154 @@
+# DevPaul - Paul Realpe | Full-Stack Developer & Software Solutions Architect
+
+## About
+Paul Realpe (DevPaul) is a full-stack developer and software solutions architect with 7+ years of experience building web, mobile, desktop, and enterprise software solutions. Specializes in Flutter, React, Angular, Vue, Python, Node.js, AI automations, and intelligent chatbots. Follows Clean Architecture, SOLID principles, and TDD. Based in Popayán, Cauca, Colombia.
+
+Contact: co.devpaul@gmail.com | +57 301 349 5689 | https://devpaul.pro
+
+## Skills & Technologies
+
+### Frontend & Mobile
+- Flutter (95%) - cross-platform: Android, iOS, Web, Desktop
+- React (90%)
+- Angular (85%)
+- Vue.js (85%)
+- Svelte (80%)
+
+### Backend & Database
+- Node.js / NestJS (90%)
+- Python / FastAPI (85%)
+- WebSockets / Socket.IO (85%)
+- PostgreSQL (80%)
+- MongoDB (80%)
+
+### Cloud & Tools
+- Firebase (85%) - Auth, Firestore, Cloud Functions, Hosting
+- AWS EC2, Lambda, S3 (75%)
+- Azure (85%)
+- Docker (80%)
+- n8n automation (85%)
+
+### AI & Automation
+- OpenAI API & Fine-tuning (85%)
+- Gemini / Google GenAI (85%)
+- Chatbots (90%)
+- Computer Vision / YOLO (75%)
+- Web Scraping (85%)
+
+## Projects
+
+### 1. Todo App with AI
+Technologies: Flutter, N8N, Deepseek, Vectorial PostgreSQL
+Category: Full Stack
+Live: https://devpaultodo.web.app
+GitHub: https://github.com/paulmrg-461/devpaul_todo_app
+Description: Task management app with integrated AI for intelligent todo handling.
+
+### 2. Central de Aluminios del Valle - Web + AI Chatbot
+Technologies: React, n8n, FastAPI, Deepseek
+Category: Web
+Live: https://centraldealuminiosdelvalle.com
+Description: Responsive corporate website with AI chatbot for customer service. Full inventory management system, CRM, and electronic invoicing.
+
+### 3. Modware Landing Page
+Technologies: ReactJS
+Category: Web
+Live: https://modware.lat
+GitHub: https://github.com/paulmrg-461/react_modware_landing
+
+### 4. Código de Tránsito - Flutter App with OpenAI Fine-tuning
+Technologies: Flutter, N8n, OpenAI Fine-tuned on Colombia Law 769/2002
+Category: Mobile
+GitHub: https://github.com/paulmrg-461/codigo_transito_devpaul
+Description: Traffic code app with AI fine-tuned on Colombian Law 769 of 2002.
+
+### 5. CDA Popayán - Vehicle Inspection App
+Technologies: Flutter, NestJS, Socket.IO, Push Notifications
+Category: Full Stack
+Live: https://cda-popayan.web.app
+GitHub: https://github.com/paulmrg-461/cda_popayan
+Description: Flutter app (Android + Web) for vehicle inspection management, technical reports, and automated email reminders. Deployed on AWS (EC2, Lambda, S3).
+
+### 6. DevPaul Loans App
+Technologies: Flutter, Firebase Auth, Firestore, Cloud Functions, Push Notifications
+Category: Full Stack
+Live: https://loansdevpaul.web.app
+GitHub: https://github.com/paulmrg-461/loans_devpaul
+Description: Loan management application.
+
+### 7. Angular Attendance Control App
+Technologies: Angular, Firebase Auth, Firestore, Cloud Functions, Push Notifications
+Category: Web
+GitHub: https://github.com/paulmrg-461/assistance_manager
+Description: Geolocation-based attendance control app with offline support.
+
+### 8. School Manager Flutter App
+Technologies: Flutter, Firebase Auth, Firestore, Cloud Functions
+Category: Mobile
+Description: Student grade management and certificate generation.
+
+### 9. NaturaStay Web App
+Technologies: ReactJS, Flutter, NestJS, n8n, DeepSeek
+Category: Full Stack
+Live: https://cozy-beignet-4b748a.netlify.app
+Description: Reservation management system with AI chatbot and real-time customer support.
+
+### 10. Grupo Vista - Consulting Management App
+Technologies: ReactJS, Flutter, NestJS, n8n, OpenAI
+Category: Full Stack
+Description: Appointment management, OpenAI chatbot, and personalized customer support CRM.
+
+### 11. Restaurant Delivery Application
+Technologies: Flutter, NestJS, Hasura
+Category: Mobile
+GitHub: https://github.com/paulmrg-461/ModEats
+Description: Order management and route tracing for restaurant deliveries.
+
+### 12. Diego López Driving School - Attendance App
+Technologies: Flutter, NestJS, Socket.IO
+Category: Full Stack
+Live: https://paulmrg-461.github.io/diego_lopez_react
+Description: Attendance registration and control for driving school.
+
+### 13. Jimmy Portfolio Flutter
+Technologies: Flutter
+Category: Web
+Live: https://jimmy-realpe.web.app
+
+### 14. Amor Eterno Landing Page
+Technologies: ReactJS
+Category: Web
+Live: https://fanciful-taiyaki-745ea3.netlify.app
+
+## Enterprise & Specialized Work
+
+### Consorcio Express Transmilenio
+Developed a custom computer vision model for automatic detection of vehicle damage, dents, and impacts using image analysis. Real-time processing integrated into the vehicle inspection workflow.
+
+### Black and Blue - Sig Systems Inc.
+Advanced real-time video surveillance system with live event detection using RTSP streams, WebSockets, and on-device analytics.
+
+### CDA Panamericana SAS
+Flutter (Android + Web) application for vehicle inspection management, technical reporting, automated email reminders. Deployed on AWS (EC2, Lambda, S3).
+
+### Comunix SAS - Socioeconomic Information System of Cauca
+AI-powered chatbot using OpenAI fine-tuning and LLM-based classification. Frontend: Flutter (mobile) + WordPress (web). Backend: AWS EC2 + Lambda + S3.
+
+## Clients
+
+1. **MegaHogar Supermercados** (Retail) - Comprehensive management system for supermarket chain: inventory, sales, electronic invoicing.
+2. **Grupo Empresarial G&H SAS** (Business) - Custom enterprise solutions and management systems.
+3. **CDA Panamericana Popayán** (Automotive) - Vehicle diagnostic center management with technical reports and certifications.
+4. **Grupo Vista SAS** (Services) - Web platform and mobile applications for specialized business services.
+5. **Farmacia Jirehfarma** (Health) - Pharmaceutical management system with inventory control and sales.
+6. **Central de Aluminios del Valle** (Industrial) - Inventory management, AI chatbot, invoicing CRM, and corporate website.
+7. **Comunix SAS** (Technology) - Innovative technological solutions and custom software.
+8. **Consorcio Express Transmilenio** (Transportation) - Computer vision for vehicle damage detection.
+9. **Sig Systems Inc.** (Security) - Real-time video surveillance system.
+
+## Services Offered
+
+1. **Web Development** - React, Angular, Vue, Svelte, Node.js, Python, RESTful APIs, databases
+2. **Mobile Development** - Flutter cross-platform (iOS, Android, Web, Desktop), app store publishing
+3. **Enterprise Systems** - CRM systems, electronic invoicing, inventory management, reports & analytics
+4. **AI & Automation** - AI chatbots, process automation, OpenAI integration, real-time WebSockets, computer vision

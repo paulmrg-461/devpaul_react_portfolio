@@ -21,6 +21,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.5.2",
     "firebase": "^11.10.0",
     "framer-motion": "^12.23.1",
     "lucide-react": "^0.574.0",

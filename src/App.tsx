@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, lazy } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
@@ -6,14 +6,15 @@ import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
 import SEO from './components/SEO';
 import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import About from './components/About';
-import Portfolio from './components/Portfolio';
-import Services from './components/Services';
-import Clients from './components/Clients';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Chatbot from './components/Chatbot';
+
+const Hero = lazy(() => import('./components/Hero'));
+const About = lazy(() => import('./components/About'));
+const Portfolio = lazy(() => import('./components/Portfolio'));
+const Services = lazy(() => import('./components/Services'));
+const Clients = lazy(() => import('./components/Clients'));
+const Contact = lazy(() => import('./components/Contact'));
+const Chatbot = lazy(() => import('./components/Chatbot'));
 
 function App() {
   return (
@@ -24,18 +25,18 @@ function App() {
             <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
               <SEO />
               <Navigation />
-              <main>
-                <Suspense fallback={<LoadingSpinner />}>
+              <Suspense fallback={<LoadingSpinner />}>
+                <main>
                   <Hero />
                   <About />
                   <Portfolio />
                   <Services />
                   <Clients />
                   <Contact />
-                </Suspense>
-              </main>
-              <Footer />
-              <Chatbot />
+                </main>
+                <Footer />
+                <Chatbot />
+              </Suspense>
             </div>
           </ErrorBoundary>
         </ThemeProvider>

@@ -3,15 +3,30 @@ const express = require('express');
 const cors = require('cors');
 const nodemailer = require('nodemailer');
 const { GoogleGenAI } = require('@google/genai');
+const rateLimit = require('express-rate-limit');
 const fs = require('fs');
 const path = require('path');
 
+const ALLOWED_ORIGINS = ['https://devpaul.pro', 'https://devpaul.web.app'];
+
 const app = express();
-app.use(cors({ origin: true }));
+app.use(cors({ origin: ALLOWED_ORIGINS }));
 app.use(express.json());
 
-const GEMINI_MODEL = 'gemini-3-flash-preview';
+const chatLimiter = rateLimit({ windowMs: 60_000, max: 20, standardHeaders: true, legacyHeaders: false });
+const emailLimiter = rateLimit({ windowMs: 60_000, max: 5, standardHeaders: true, legacyHeaders: false });
+
+const GEMINI_MODEL = 'gemini-2.0-flash';
 let cachedStoreName = null;
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
 
 function getAIClient() {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -28,9 +43,10 @@ async function ensureStoreAndDocument(ai) {
 
     const store = await ai.fileSearchStores.create({ config: { displayName: 'devpaul-portfolio-store' } });
 
-    const docFile = path.join(process.cwd(), 'devpaul-portfolio-source.txt');
-    const content = 'DevPaul portfolio source: projects, skills, clients, and experience overview.';
-    fs.writeFileSync(docFile, content);
+    const docFile = path.join(__dirname, 'devpaul-portfolio-source.txt');
+    if (!fs.existsSync(docFile)) {
+      throw new Error('devpaul-portfolio-source.txt not found in functions directory');
+    }
 
     let op = await ai.fileSearchStores.uploadToFileSearchStore({
       file: docFile,
@@ -53,7 +69,7 @@ async function ensureStoreAndDocument(ai) {
   }
 }
 
-app.post('/api/chat', async (req, res) => {
+app.post('/api/chat', chatLimiter, async (req, res) => {
   try {
     const { message, lang } = req.body || {};
     if (!message || typeof message !== 'string') {
@@ -78,7 +94,7 @@ app.post('/api/chat', async (req, res) => {
     const isEnglish = String(lang || '').toLowerCase() === 'en';
     const persona = isEnglish
       ? [
-          'Always respond in English and in first person.',
+          'Always respond in English and in first person as DevPaul.',
           'My name is DevPaul.',
           'I have over 7 years of experience building web, mobile, desktop, and enterprise software solutions.',
           'I’m a full-stack developer and software architect specializing in Flutter, React, Angular, Vue, Python, and Node.js.',
@@ -94,8 +110,8 @@ app.post('/api/chat', async (req, res) => {
           'I never mention being a language model or discuss training data.'
         ].join(' ')
       : [
-          'Responde siempre en español y en primera persona.',            
-          'Tu nombre es DevPaul.',
+          'Responde siempre en español y en primera persona como DevPaul.',
+          'Mi nombre es DevPaul.',
           'Tengo más de 7 años de experiencia desarrollando aplicaciones web, móviles, de escritorio y sistemas empresariales.',
           'Soy un desarrollador full-stack y arquitecto de soluciones de software, especializado en Flutter, React, Angular, Vue, Python y Node.js.',
           'Mis proyectos incluyen: Todo App con IA, Central de Aluminios del Valle (web + chatbot), CDA Popayán (registro vehicular), Código de Tránsito con IA afinada en la Ley 769, School Manager, DevPaul Loans, Grupo Vista (CRM + chatbot OpenAI), y NaturaStay (sistema de reservas con IA).',
@@ -139,16 +155,18 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-app.post('/api/send-email', async (req, res) => {
+app.post('/api/send-email', emailLimiter, async (req, res) => {
   const { name, email, subject, message } = req.body;
   if (!name || !email || !subject || !message) {
-    return res.status(400).json({
-      success: false,
-      message: 'Todos los campos son requeridos'
-    });
+    return res.status(400).json({ success: false, message: 'Todos los campos son requeridos' });
   }
 
   try {
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeSubject = escapeHtml(subject);
+    const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
+
     const transporter = nodemailer.createTransport({
       host: process.env.VITE_MAILEROO_SMTP_HOST || 'smtp.maileroo.com',
       port: parseInt(process.env.VITE_MAILEROO_SMTP_PORT || '587'),
@@ -161,11 +179,18 @@ app.post('/api/send-email', async (req, res) => {
     });
 
     const mailOptions = {
-      from: `"${name}" <${process.env.VITE_MAILEROO_EMAIL}>`,
+      from: `"DevPaul Portfolio" <${process.env.VITE_MAILEROO_EMAIL}>`,
       to: process.env.VITE_MAILEROO_EMAIL,
       replyTo: email,
-      subject: `Contacto desde Portfolio: ${subject}`,
-      text: message
+      subject: `Contacto desde Portfolio: ${escapeHtml(subject)}`,
+      html: `<div style="font-family:Arial,sans-serif;max-width:600px">
+        <h2 style="color:#2563eb">Nuevo mensaje desde tu portfolio</h2>
+        <p><strong>Nombre:</strong> ${safeName}</p>
+        <p><strong>Email:</strong> ${safeEmail}</p>
+        <p><strong>Asunto:</strong> ${safeSubject}</p>
+        <p><strong>Mensaje:</strong><br>${safeMessage}</p>
+      </div>`,
+      text: `Nombre: ${name}\nEmail: ${email}\nAsunto: ${subject}\n\n${message}`
     };
 
     await transporter.sendMail(mailOptions);

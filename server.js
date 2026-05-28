@@ -7,33 +7,54 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
+import rateLimit from 'express-rate-limit';
 
-// Configurar __dirname para ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Cargar variables de entorno
 dotenv.config({ path: path.join(__dirname, '.env.local') });
 
-// Verificar que las variables de entorno se cargaron correctamente
-console.log('Variables de entorno cargadas:');
 console.log('SMTP Host:', process.env.VITE_MAILEROO_SMTP_HOST);
-console.log('SMTP Port:', process.env.VITE_MAILEROO_SMTP_PORT);
 console.log('Email:', process.env.VITE_MAILEROO_EMAIL);
-console.log('Sending Key disponible:', !!process.env.VITE_MAILEROO_SENDING_KEY);
 console.log('Gemini API Key disponible:', !!process.env.GEMINI_API_KEY);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
-app.use(cors());
+app.use(cors({ origin: ['http://localhost:5173', 'http://localhost:4173'] }));
 app.use(express.json());
 
+const chatLimiter = rateLimit({ windowMs: 60_000, max: 20, standardHeaders: true, legacyHeaders: false });
+const emailLimiter = rateLimit({ windowMs: 60_000, max: 5, standardHeaders: true, legacyHeaders: false });
+
 // ====== Gemini File Search Chat ======
-const GEMINI_MODEL = 'gemini-3-flash-preview';
-const FILE_SEARCH_STORE_NAME = 'fileSearchStores/devpaul-portfolio-store';
+const GEMINI_MODEL = 'gemini-2.0-flash';
 let cachedStoreName = null;
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
+const transporter = nodemailer.createTransport({
+  host: process.env.VITE_MAILEROO_SMTP_HOST || 'smtp.maileroo.com',
+  port: parseInt(process.env.VITE_MAILEROO_SMTP_PORT || '587'),
+  secure: false,
+  auth: {
+    user: process.env.VITE_MAILEROO_EMAIL || 'info@devpaul.pro',
+    pass: (process.env.VITE_MAILEROO_API_KEY || '').trim()
+  },
+  tls: { rejectUnauthorized: false }
+});
+
+transporter.verify((error) => {
+  if (error) console.error('SMTP connection error:', error);
+  else console.log('Servidor SMTP listo para enviar mensajes');
+});
 
 function getAIClient() {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -79,7 +100,7 @@ async function ensureStoreAndDocument(ai) {
   }
 }
 
-app.post('/api/chat', async (req, res) => {
+app.post('/api/chat', chatLimiter, async (req, res) => {
   try {
     const { message, lang } = req.body || {};
     if (!message || typeof message !== 'string') {
@@ -163,67 +184,39 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-// Endpoint para enviar correos
-app.post('/api/send-email', async (req, res) => {
+app.post('/api/send-email', emailLimiter, async (req, res) => {
   const { name, email, subject, message } = req.body;
 
-  // Validar campos requeridos
   if (!name || !email || !subject || !message) {
-    return res.status(400).json({ 
-      success: false, 
-      message: 'Todos los campos son requeridos' 
-    });
+    return res.status(400).json({ success: false, message: 'Todos los campos son requeridos' });
   }
 
   try {
-    // Configurar el transportador de nodemailer con Maileroo
-    // Según la documentación de Maileroo, debemos usar el correo electrónico completo como nombre de usuario
-    const transporter = nodemailer.createTransport({
-      host: process.env.VITE_MAILEROO_SMTP_HOST || 'smtp.maileroo.com',
-      port: parseInt(process.env.VITE_MAILEROO_SMTP_PORT || '587'),
-      secure: false, // false para puerto 587 (STARTTLS)
-      auth: {
-        user: process.env.VITE_MAILEROO_EMAIL || 'info@devpaul.pro',
-        pass: (process.env.VITE_MAILEROO_API_KEY || '').trim()
-      },
-      tls: {
-        rejectUnauthorized: false // Permitir certificados autofirmados
-      }
-    });
-    
-    // Verificar la conexión SMTP al iniciar el servidor
-    transporter.verify(function(error, success) {
-      if (error) {
-        console.error('Error al verificar la conexión SMTP:', error);
-      } else {
-        console.log('Servidor SMTP listo para enviar mensajes');
-      }
-    });
+    const safeName = escapeHtml(name);
+    const safeEmail = escapeHtml(email);
+    const safeSubject = escapeHtml(subject);
+    const safeMessage = escapeHtml(message).replace(/\n/g, '<br>');
 
-    // Configurar el correo
     const mailOptions = {
-      from: `"${name}" <${process.env.VITE_MAILEROO_EMAIL}>`,
+      from: `"DevPaul Portfolio" <${process.env.VITE_MAILEROO_EMAIL}>`,
       to: process.env.VITE_MAILEROO_EMAIL,
       replyTo: email,
-      subject: `Contacto desde Portfolio: ${subject}`,
+      subject: `Contacto desde Portfolio: ${escapeHtml(subject)}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #2563eb; border-bottom: 2px solid #e5e7eb; padding-bottom: 10px;">
             Nuevo mensaje desde tu portfolio
           </h2>
-          
           <div style="background-color: #f9fafb; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #374151; margin-top: 0;">Información del contacto:</h3>
-            <p><strong>Nombre:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Asunto:</strong> ${subject}</p>
+            <p><strong>Nombre:</strong> ${safeName}</p>
+            <p><strong>Email:</strong> ${safeEmail}</p>
+            <p><strong>Asunto:</strong> ${safeSubject}</p>
           </div>
-          
           <div style="background-color: #ffffff; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
             <h3 style="color: #374151; margin-top: 0;">Mensaje:</h3>
-            <p style="line-height: 1.6; color: #4b5563;">${message.replace(/\n/g, '<br>')}</p>
+            <p style="line-height: 1.6; color: #4b5563;">${safeMessage}</p>
           </div>
-          
           <div style="margin-top: 20px; padding: 15px; background-color: #eff6ff; border-radius: 8px;">
             <p style="margin: 0; color: #1e40af; font-size: 14px;">
               <strong>Nota:</strong> Puedes responder directamente a este correo para contactar al remitente.
@@ -231,19 +224,7 @@ app.post('/api/send-email', async (req, res) => {
           </div>
         </div>
       `,
-      text: `
-        Nuevo mensaje desde tu portfolio
-        
-        Información del contacto:
-        Nombre: ${name}
-        Email: ${email}
-        Asunto: ${subject}
-        
-        Mensaje:
-        ${message}
-        
-        Nota: Puedes responder directamente a este correo para contactar al remitente.
-      `
+      text: `Nuevo mensaje desde tu portfolio\n\nNombre: ${name}\nEmail: ${email}\nAsunto: ${subject}\n\nMensaje:\n${message}`
     };
 
     // Enviar el correo
